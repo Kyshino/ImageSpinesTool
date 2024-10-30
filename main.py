@@ -19,28 +19,23 @@ root.iconphoto(False, favicon)
 
 root.resizable(False, False) 
 
-# Centra la ventana en la pantalla
 window_width = 600
-window_height = 300  # Aumenta la altura para el ProgressBar
+window_height = 300
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 x = (screen_width // 2) - (window_width // 2)
 y = (screen_height // 2) - (window_height // 2)
 root.geometry(f"{window_width}x{window_height}+{x}+{int(y)}")
 
-# Variables para las selecciones
-selected_size = StringVar(value=list(sizes.keys())[0])  # Por defecto, primer tamaño
-selected_paper_type = StringVar(value=list(paper_horizontal_sizes.keys())[0])  # Por defecto, primer tipo de papel
+selected_size = StringVar(value=list(sizes.keys())[0])
+selected_paper_type = StringVar(value=list(paper_horizontal_sizes.keys())[0])
 
-# Variables para las rutas
 images_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages")
 output_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages\Output")
 
-# Variable para controlar el hilo de procesamiento
 processing_thread = None
 processing_cancelled = False
 
-# Crea un frame con etiqueta y campo de entrada
 def create_label_and_entry(parent, label_text, var, row, width=50):
     frame = Frame(parent)
     frame.grid(row=row, column=0, padx=10, pady=5, sticky='w')
@@ -50,7 +45,6 @@ def create_label_and_entry(parent, label_text, var, row, width=50):
     entry.pack(side='right')
     return label, entry
 
-# Crea un frame con etiqueta y Combobox
 def create_label_and_combobox(parent, label_text, var, row, options, width=50):
     frame = Frame(parent)
     frame.grid(row=row, column=0, padx=10, pady=5, sticky='w')
@@ -60,7 +54,6 @@ def create_label_and_combobox(parent, label_text, var, row, options, width=50):
     combobox.pack(side='right')
     return label, combobox
 
-# Procesa las imágenes y las guarda en una carpeta de salida
 def process_images(images_folder_path, output_folder_path, new_image_size, selected_size_name, paper_type):
     global processing_cancelled
     os.makedirs(output_folder_path, exist_ok=True)
@@ -74,7 +67,7 @@ def process_images(images_folder_path, output_folder_path, new_image_size, selec
 
     for index, image_file in enumerate(image_files):
         if processing_cancelled:
-            break  # Salir del bucle si se ha cancelado el proceso
+            break
 
         try:
             img_path = os.path.join(images_folder_path, image_file)
@@ -95,31 +88,25 @@ def process_images(images_folder_path, output_folder_path, new_image_size, selec
             canvas.paste(img_resized, (x_offset, y_position), img_resized)
             x_offset += new_image_size[0] + spacing
 
-            # Actualizar el ProgressBar
             progress_bar['value'] = (index + 1) / total_images * 100
-            root.update_idletasks()  # Actualiza la interfaz
+            root.update_idletasks()
 
         except Exception as e:
             print(f"Error al procesar la imagen {image_file}: {e}")
 
     if x_offset > side_margin and not processing_cancelled:
-        # Si no se canceló, guarda el último canvas
         canva_name = f"{selected_size_name.replace(' ', '_').lower()}_{paper_type.replace(' ', '_').lower()}_output_{canvas_count}.png"
         canvas.save(os.path.join(output_folder_path, canva_name), format="PNG", dpi=(300, 300))
 
-# Ejecuta el procesamiento de imágenes en un hilo separado
 def run_processing():
     global processing_cancelled
-    processing_cancelled = False  # Resetear la bandera de cancelación
+    processing_cancelled = False
 
-    # Deshabilitar el botón de procesamiento mientras se ejecuta
     process_button.config(state='disabled')
-    cancel_button.config(state='normal')  # Hacer visible el botón de cancelación
-    # Hacer visible el ProgressBar y el label
-    progress_label.grid(row=7, column=0, padx=10, pady=(5, 0), sticky='w')  # Añadir espacio arriba
+    cancel_button.config(state='normal')
+    progress_label.grid(row=7, column=0, padx=10, pady=(5, 0), sticky='w')
     progress_bar.grid(row=8, column=0, padx=10, pady=(0, 5), sticky='ew')
 
-    # Crear un hilo para el procesamiento
     global processing_thread
     processing_thread = threading.Thread(target=process_images_thread)
     processing_thread.start()
@@ -133,18 +120,16 @@ def process_images_thread():
 
     if not os.path.exists(images_folder_path):
         messagebox.showerror("Error", texts[current_language]['error_image_folder'])
-        # Rehabilitar el botón de procesamiento y ocultar elementos de progreso
         process_button.config(state='normal')
         cancel_button.config(state='disabled')
-        hide_progress_elements()  # Ocultar ProgressBar y label
+        hide_progress_elements()
         return
 
     if not os.path.exists(output_folder_path):
         messagebox.showerror("Error", texts[current_language]['error_output_folder'])
-        # Rehabilitar el botón de procesamiento y ocultar elementos de progreso
         process_button.config(state='normal')
         cancel_button.config(state='disabled')
-        hide_progress_elements()  # Ocultar ProgressBar y label
+        hide_progress_elements()
         return
 
     process_images(images_folder_path, output_folder_path, new_image_size, selected_size_name, paper_type)
@@ -155,28 +140,22 @@ def process_images_thread():
         if open_output.get():
             subprocess.Popen(f'explorer "{output_folder_path}"')
 
-        # Mostrar mensaje de éxito
         update_label_text(progress_label, texts[current_language]['success_message'])
 
-    # Rehabilitar el botón de procesamiento y desactivar el botón de cancelación
     process_button.config(state='normal')
     cancel_button.config(state='disabled')
-
-    # Ocultar el ProgressBar y el label después de 5 segundos
     root.after(5000, hide_progress_elements)
 
 def hide_progress_elements():
     progress_label.grid_forget()
     progress_bar.grid_forget()
 
-# Función para cancelar el procesamiento
 def cancel_processing():
     global processing_cancelled
     processing_cancelled = True
     progress_bar.configure(style='red.Horizontal.TProgressbar')
     update_label_text(progress_label, texts[current_language]['cancelled_message'])
 
-# Cambia el idioma de la interfaz
 def change_language(lang):
     global current_language
     current_language = lang
@@ -187,9 +166,7 @@ def update_tooltips():
     ToolTip(entry_image_folder, texts[current_language]['image_folder_tooltip'] + texts[current_language]['available_extensions'])
     ToolTip(entry_output_folder, texts[current_language]['output_folder_tooltip'])
 
-# Actualiza los textos de la interfaz según el idioma seleccionado
 def update_texts():
-
     if label_image_folder: 
         label_image_folder.config(text=texts[current_language]['image_folder_label'])
     if label_output_folder:
@@ -200,7 +177,7 @@ def update_texts():
         label_select_paper.config(text=texts[current_language]['select_paper_size_label'])
         
     process_button.config(text=texts[current_language]['process_button'])
-    cancel_button.config(text=texts[current_language]['cancel_button'])  # Agregar botón de cancelación
+    cancel_button.config(text=texts[current_language]['cancel_button'])
 
     checkbutton.config(text=texts[current_language]['open_output_check'])
 
@@ -210,7 +187,6 @@ def update_texts():
     paper_combobox['values'] = list(paper_horizontal_sizes.keys())
     paper_combobox.set(selected_paper_type.get())
 
-# Función para manejar el cambio de idioma
 def on_language_change(event):
     selected_lang = language_selected.get()
     lang_code = language_map[selected_lang]
@@ -220,14 +196,12 @@ def update_label_text(label, text):
     label.config(text=text)
 
 def add_signature():
-    signature = Label(root, text="By Kyshino", font=('Arial', 8), fg='gray', bg=root.cget("bg"))  # Usamos el mismo color de fondo que la ventana
+    signature = Label(root, text="By Kyshino", font=('Arial', 8), fg='gray', bg=root.cget("bg"))
     signature.place(relx=0.98, rely=0.99, anchor='se')
 
-# Crear un frame para seleccionar el idioma
 language_frame = Frame(root)
 language_frame.grid(row=0, column=0, padx=10, pady=10, sticky='w')
 
-# Combobox para seleccionar idioma
 language_selected = StringVar(value="English")
 language_label = Label(language_frame, text=texts[current_language]['language_label'])
 language_label.pack(side='left', padx=(0, 10))
@@ -236,34 +210,25 @@ language_combobox = ttk.Combobox(language_frame, textvariable=language_selected,
 language_combobox.pack(side='left')
 language_combobox.bind("<<ComboboxSelected>>", on_language_change)
 
-# Crea los labels y entradas en el grid
 label_image_folder, entry_image_folder = create_label_and_entry(root, texts[current_language]['image_folder_label'], images_folder, 1)
 label_output_folder, entry_output_folder = create_label_and_entry(root, texts[current_language]['output_folder_label'], output_folder, 2)
 
 label_select_size, size_combobox = create_label_and_combobox(root, texts[current_language]['select_size_label'], selected_size, 3, list(sizes.keys()), 20)
 label_select_paper, paper_combobox = create_label_and_combobox(root, texts[current_language]['select_paper_size_label'], selected_paper_type, 4, list(paper_horizontal_sizes.keys()), 10)
 
-# Checkbutton para abrir la carpeta de salida
 open_output = BooleanVar(value=False)
 checkbutton = Checkbutton(root, text=texts[current_language]['open_output_check'], variable=open_output)
 checkbutton.grid(row=5, column=0, padx=10, pady=5, sticky='w')
 
-# Botón de procesamiento de imágenes
 process_button = Button(root, text=texts[current_language]['process_button'], command=run_processing)
 process_button.grid(row=6, column=0, padx=10, pady=5, sticky='w')
 
-# Botón para cancelar el procesamiento
 cancel_button = Button(root, text=texts[current_language]['cancel_button'], command=cancel_processing, state='disabled')
-cancel_button.grid(row=6, column=0, padx=120, pady=5, sticky='w')  # Colocarlo junto al botón de procesar
+cancel_button.grid(row=6, column=0, padx=120, pady=5, sticky='w')
 
-# Label para el spinner
-progress_label = Label(root, text=texts[current_language]['processing'])  # Este label lo usaremos para el spinner
-# ProgressBar
+progress_label = Label(root, text=texts[current_language]['processing'])
 progress_bar = ttk.Progressbar(root, length=400, mode='determinate')
 update_tooltips()
-
 add_signature()
 
-
-# Ejecuta el bucle principal
 root.mainloop()

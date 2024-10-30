@@ -1,7 +1,12 @@
 language_map = {
     "English": "en",
     "Español": "es",
-    "Français": "fr"
+    "Français": "fr",
+    "Português": "pt",
+    "Deutsch": "de",
+    "Italiano": "it",
+    "中文": "zh",
+    "Русский": "ru"
 }
 
 sizes = {

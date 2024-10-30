@@ -6,7 +6,7 @@ texts = {
         'select_size_label': 'Select Size',
         'select_paper_size_label': 'Select Paper Size',
         'process_button': 'Process Images',
-        'cancel_button': 'Cancel',  # Text for the cancel button
+        'cancel_button': 'Cancel',
         'open_output_check': 'Open the output folder when done',
         'language_label': 'Select language',
         'error_image_folder': 'Image folder does not exist.',
@@ -39,7 +39,7 @@ texts = {
         'select_size_label': 'Seleccionar Tamaño',
         'select_paper_size_label': 'Seleccionar Tamaño de Papel',
         'process_button': 'Procesar Imágenes',
-        'cancel_button': 'Cancelar',  # Texto para el botón de cancelar
+        'cancel_button': 'Cancelar',
         'open_output_check': 'Abrir la carpeta de salida al terminar',
         'language_label': 'Selecciona idioma',
         'error_image_folder': 'La carpeta de imágenes no existe.',
@@ -72,7 +72,7 @@ texts = {
         'select_size_label': 'Sélectionner la Taille',
         'select_paper_size_label': 'Sélectionner le Format de Papier',
         'process_button': 'Traiter les Images',
-        'cancel_button': 'Annuler',  # Texto para el botón de cancelar
+        'cancel_button': 'Annuler',
         'open_output_check': 'Ouvrir le dossier de sortie à la fin',
         'language_label': 'Sélectionner la langue',
         'error_image_folder': 'Le dossier d\'images n\'existe pas.',
@@ -97,5 +97,170 @@ texts = {
         'creating': 'Création',
         'available_extensions': 'Accepte uniquement les extensions .png, .jpg, .jpeg, .webp.',
         'cancelled_message': 'Le traitement a été annulé.'
+    },
+    'pt': {
+        'title': 'Ferramenta de Costura de Imagens',
+        'image_folder_label': 'Pasta de Imagens',
+        'output_folder_label': 'Pasta de Saída',
+        'select_size_label': 'Selecionar Tamanho',
+        'select_paper_size_label': 'Selecionar Tamanho de Papel',
+        'process_button': 'Processar Imagens',
+        'cancel_button': 'Cancelar',
+        'open_output_check': 'Abrir a pasta de saída ao terminar',
+        'language_label': 'Selecionar idioma',
+        'error_image_folder': 'A pasta de imagens não existe.',
+        'error_output_folder': 'A pasta de saída não existe.',
+        'success_message': 'Processamento concluído com sucesso!',
+        'paper_types': {
+            'A4': 'A4',
+            'A3': 'A3',
+            'A5': 'A5',
+            'Carta': 'Carta',
+            'Legal': 'Legal',
+            'B5': 'B5'
+        },
+        'paper_orientation_label': 'Orientação',
+        'orientation_options': {
+            'portrait': 'Retrato',
+            'landscape': 'Paisagem'
+        },
+        'image_folder_tooltip': 'Selecione a pasta onde suas imagens estão localizadas.',
+        'output_folder_tooltip': 'Selecione a pasta onde as imagens processadas serão salvas.',
+        'processing': 'Processando',
+        'creating': 'Criando',
+        'available_extensions': 'Aceita apenas extensões .png, .jpg, .jpeg, .webp.',
+        'cancelled_message': 'O processamento foi cancelado.'
+    },
+    'de': {
+        'title': 'Bild-Rückenwerkzeug',
+        'image_folder_label': 'Bilderordner',
+        'output_folder_label': 'Ausgabeverzeichnis',
+        'select_size_label': 'Größe auswählen',
+        'select_paper_size_label': 'Papiergröße auswählen',
+        'process_button': 'Bilder verarbeiten',
+        'cancel_button': 'Abbrechen',
+        'open_output_check': 'Öffnen Sie den Ausgabeverzeichnis, wenn abgeschlossen',
+        'language_label': 'Sprache auswählen',
+        'error_image_folder': 'Der Bilderordner existiert nicht.',
+        'error_output_folder': 'Der Ausgabeverzeichnis existiert nicht.',
+        'success_message': 'Verarbeitung erfolgreich abgeschlossen!',
+        'paper_types': {
+            'A4': 'A4',
+            'A3': 'A3',
+            'A5': 'A5',
+            'Carta': 'Brief',
+            'Legal': 'Rechtlich',
+            'B5': 'B5'
+        },
+        'paper_orientation_label': 'Ausrichtung',
+        'orientation_options': {
+            'portrait': 'Hochformat',
+            'landscape': 'Querformat'
+        },
+        'image_folder_tooltip': 'Wählen Sie den Ordner aus, in dem sich Ihre Bilder befinden.',
+        'output_folder_tooltip': 'Wählen Sie den Ordner aus, in dem die bearbeiteten Bilder gespeichert werden.',
+        'processing': 'Verarbeitung',
+        'creating': 'Erstellen',
+        'available_extensions': 'Akzeptiert nur .png, .jpg, .jpeg, .webp Erweiterungen.',
+        'cancelled_message': 'Die Verarbeitung wurde abgebrochen.'
+    },
+    'it': {
+        'title': 'Strumento Spine Immagine',
+        'image_folder_label': 'Cartella Immagini',
+        'output_folder_label': 'Cartella di Uscita',
+        'select_size_label': 'Seleziona Dimensione',
+        'select_paper_size_label': 'Seleziona Dimensione Carta',
+        'process_button': 'Elabora Immagini',
+        'cancel_button': 'Annulla',
+        'open_output_check': 'Apri la cartella di output al termine',
+        'language_label': 'Seleziona lingua',
+        'error_image_folder': 'La cartella delle immagini non esiste.',
+        'error_output_folder': 'La cartella di output non esiste.',
+        'success_message': 'Elaborazione completata con successo!',
+        'paper_types': {
+            'A4': 'A4',
+            'A3': 'A3',
+            'A5': 'A5',
+            'Carta': 'Lettera',
+            'Legal': 'Legale',
+            'B5': 'B5'
+        },
+        'paper_orientation_label': 'Orientamento',
+        'orientation_options': {
+            'portrait': 'Ritratto',
+            'landscape': 'Paesaggio'
+        },
+        'image_folder_tooltip': 'Seleziona la cartella in cui si trovano le tue immagini.',
+        'output_folder_tooltip': 'Seleziona la cartella in cui verranno salvate le immagini elaborate.',
+        'processing': 'Elaborazione',
+        'creating': 'Creazione',
+        'available_extensions': 'Accetta solo estensioni .png, .jpg, .jpeg, .webp.',
+        'cancelled_message': 'L\'elaborazione è stata annullata.'
+    },
+    'zh': {
+        'title': '图像脊工具',
+        'image_folder_label': '图像文件夹',
+        'output_folder_label': '输出文件夹',
+        'select_size_label': '选择大小',
+        'select_paper_size_label': '选择纸张大小',
+        'process_button': '处理图像',
+        'cancel_button': '取消',
+        'open_output_check': '完成后打开输出文件夹',
+        'language_label': '选择语言',
+        'error_image_folder': '图像文件夹不存在。',
+        'error_output_folder': '输出文件夹不存在。',
+        'success_message': '处理成功完成！',
+        'paper_types': {
+            'A4': 'A4',
+            'A3': 'A3',
+            'A5': 'A5',
+            'Carta': '信纸',
+            'Legal': '法律',
+            'B5': 'B5'
+        },
+        'paper_orientation_label': '方向',
+        'orientation_options': {
+            'portrait': '纵向',
+            'landscape': '横向'
+        },
+        'image_folder_tooltip': '选择包含您图像的文件夹。',
+        'output_folder_tooltip': '选择将保存处理后图像的文件夹。',
+        'processing': '处理',
+        'creating': '创建',
+        'available_extensions': '仅接受 .png、.jpg、.jpeg、.webp 扩展名。',
+        'cancelled_message': '处理已被取消。'
+    },
+    'ru': {
+        'title': 'Инструмент для изображений',
+        'image_folder_label': 'Папка с изображениями',
+        'output_folder_label': 'Выходная папка',
+        'select_size_label': 'Выбрать размер',
+        'select_paper_size_label': 'Выбрать размер бумаги',
+        'process_button': 'Обработать изображения',
+        'cancel_button': 'Отмена',
+        'open_output_check': 'Открыть выходную папку по завершении',
+        'language_label': 'Выберите язык',
+        'error_image_folder': 'Папка с изображениями не существует.',
+        'error_output_folder': 'Выходная папка не существует.',
+        'success_message': 'Обработка завершена успешно!',
+        'paper_types': {
+            'A4': 'A4',
+            'A3': 'A3',
+            'A5': 'A5',
+            'Carta': 'Письмо',
+            'Legal': 'Юридический',
+            'B5': 'B5'
+        },
+        'paper_orientation_label': 'Ориентация',
+        'orientation_options': {
+            'portrait': 'Портрет',
+            'landscape': 'Ландшафт'
+        },
+        'image_folder_tooltip': 'Выберите папку, в которой находятся ваши изображения.',
+        'output_folder_tooltip': 'Выберите папку, в которую будут сохранены обработанные изображения.',
+        'processing': 'Обработка',
+        'creating': 'Создание',
+        'available_extensions': 'Принимает только расширения .png, .jpg, .jpeg, .webp.',
+        'cancelled_message': 'Обработка была отменена.'
     }
 }
