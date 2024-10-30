@@ -34,7 +34,6 @@ if exist %EXECUTABLE% (
     echo Ha ocurrido un error al crear el ejecutable.
 )
 
-pause
 exit /b
 
 :RemovePycache
