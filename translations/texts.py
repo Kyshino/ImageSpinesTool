@@ -6,7 +6,7 @@ texts = {
         'select_size_label': 'Select Size',
         'select_paper_size_label': 'Select Paper Size',
         'process_button': 'Process Images',
-        'cancel_button': 'Cancel',  # Texto para el botón de cancelar
+        'cancel_button': 'Cancel',  # Text for the cancel button
         'open_output_check': 'Open the output folder when done',
         'language_label': 'Select language',
         'error_image_folder': 'Image folder does not exist.',
@@ -29,7 +29,7 @@ texts = {
         'output_folder_tooltip': 'Select the folder where processed images will be saved.',
         'processing': 'Processing',
         'creating': 'Creating',
-        'available_extensions': 'Only Accepts .png, .jpg, .jpeg, .webp extensions.',
+        'available_extensions': 'Only accepts .png, .jpg, .jpeg, .webp extensions.',
         'cancelled_message': 'Processing has been cancelled.'
     },
     'es': {

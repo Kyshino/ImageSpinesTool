@@ -1,6 +1,6 @@
-from tkinter import Tk, Label, Entry, Button, StringVar, messagebox, Checkbutton, BooleanVar, Frame
+from tkinter import Tk, Label, Entry, Button, StringVar, messagebox, Checkbutton, BooleanVar, Frame, PhotoImage
 from tkinter import ttk
-from PIL import Image
+from PIL import Image, ImageTk
 import os
 import subprocess
 import threading
@@ -10,7 +10,14 @@ from variables import language_map, sizes, paper_horizontal_sizes, side_margin
 
 root = Tk()
 current_language = 'en'
-root.title('Image Spines Tool v0.2')
+root.title('Image Spines Tool v0.3-beta')
+favicon_path = './images/favicon.ico'
+
+favicon_image = Image.open(favicon_path)
+favicon = ImageTk.PhotoImage(favicon_image)
+root.iconphoto(False, favicon)
+
+root.resizable(False, False) 
 
 # Centra la ventana en la pantalla
 window_width = 600
@@ -21,14 +28,13 @@ x = (screen_width // 2) - (window_width // 2)
 y = (screen_height // 2) - (window_height // 2)
 root.geometry(f"{window_width}x{window_height}+{x}+{int(y)}")
 
-
 # Variables para las selecciones
 selected_size = StringVar(value=list(sizes.keys())[0])  # Por defecto, primer tamaño
 selected_paper_type = StringVar(value=list(paper_horizontal_sizes.keys())[0])  # Por defecto, primer tipo de papel
 
 # Variables para las rutas
-images_folder = StringVar(value=r"C:\Users\KyshinoDesktop\Downloads\Spines")
-output_folder = StringVar(value=r"C:\Users\KyshinoDesktop\Downloads\Spines\Output")
+images_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages")
+output_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages\Output")
 
 # Variable para controlar el hilo de procesamiento
 processing_thread = None
@@ -127,10 +133,18 @@ def process_images_thread():
 
     if not os.path.exists(images_folder_path):
         messagebox.showerror("Error", texts[current_language]['error_image_folder'])
+        # Rehabilitar el botón de procesamiento y ocultar elementos de progreso
+        process_button.config(state='normal')
+        cancel_button.config(state='disabled')
+        hide_progress_elements()  # Ocultar ProgressBar y label
         return
 
     if not os.path.exists(output_folder_path):
         messagebox.showerror("Error", texts[current_language]['error_output_folder'])
+        # Rehabilitar el botón de procesamiento y ocultar elementos de progreso
+        process_button.config(state='normal')
+        cancel_button.config(state='disabled')
+        hide_progress_elements()  # Ocultar ProgressBar y label
         return
 
     process_images(images_folder_path, output_folder_path, new_image_size, selected_size_name, paper_type)
@@ -144,9 +158,9 @@ def process_images_thread():
         # Mostrar mensaje de éxito
         update_label_text(progress_label, texts[current_language]['success_message'])
 
-    # Rehabilitar el botón de procesamiento
+    # Rehabilitar el botón de procesamiento y desactivar el botón de cancelación
     process_button.config(state='normal')
-    cancel_button.config(state='disabled')  # Ocultar el botón de cancelación
+    cancel_button.config(state='disabled')
 
     # Ocultar el ProgressBar y el label después de 5 segundos
     root.after(5000, hide_progress_elements)
@@ -175,8 +189,7 @@ def update_tooltips():
 
 # Actualiza los textos de la interfaz según el idioma seleccionado
 def update_texts():
-    root.title(texts[current_language]['title'])
-    
+
     if label_image_folder: 
         label_image_folder.config(text=texts[current_language]['image_folder_label'])
     if label_output_folder:
@@ -205,6 +218,10 @@ def on_language_change(event):
 
 def update_label_text(label, text):
     label.config(text=text)
+
+def add_signature():
+    signature = Label(root, text="By Kyshino", font=('Arial', 8), fg='gray', bg=root.cget("bg"))  # Usamos el mismo color de fondo que la ventana
+    signature.place(relx=0.98, rely=0.99, anchor='se')
 
 # Crear un frame para seleccionar el idioma
 language_frame = Frame(root)
@@ -244,5 +261,9 @@ progress_label = Label(root, text=texts[current_language]['processing'])  # Este
 # ProgressBar
 progress_bar = ttk.Progressbar(root, length=400, mode='determinate')
 update_tooltips()
+
+add_signature()
+
+
 # Ejecuta el bucle principal
 root.mainloop()
