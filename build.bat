@@ -1,82 +1,105 @@
 @echo off
-setlocal
+setlocal enabledelayedexpansion
 
-rem Definir el nombre del ejecutable
-set EXECUTABLE=main.exe
+:: Color configuration (0=Black background, A=Light green text)
+color 0A
 
+:: Window title
+title Building Image Spines Tool
 
-rem Elimina lo que no es necesario
-call :RemovePycache components
-call :RemovePycache translations
-call :RemoveFile main.spec
+:: Banner
+echo ===================================
+echo    Building Image Spines Tool
+echo ===================================
+echo.
+
+:: Set executable name
+set EXECUTABLE=ImagesSpinesTool.exe
+
+:: Remove all __pycache__ folders recursively
+echo [INFO] Removing all __pycache__ folders...
+for /d /r %%d in (*__pycache__*) do (
+    echo [INFO] Removing %%d
+    rmdir /s /q "%%d"
+)
+
+:: Remove unnecessary files
+call :RemoveFile ImagesSpinesTool.spec
 call :RemoveFolder build
 call :RemoveFolder dist
 
+:: Prepare PyInstaller base command
+set PYINSTALLER_CMD=pyinstaller --onefile --windowed --noconsole --name "ImagesSpinesTool" --distpath .
 
-rem Crear el ejecutable
-pyinstaller --onefile --windowed --distpath . main.py
+:: Add icon if exists, but don't include it in the resources
+if exist "images/favicon.ico" (
+    set PYINSTALLER_CMD=%PYINSTALLER_CMD% --icon="images/favicon.ico"
+    echo [INFO] Adding favicon to executable
+) else (
+    echo [WARN] favicon.ico not found, continuing without icon
+)
 
-rem Mover el ejecutable al directorio principal y eliminar el resto
+:: Create executable
+echo [INFO] Creating executable...
+%PYINSTALLER_CMD% --add-data "images;images" --add-data "translations;translations" main.py
+
+:: Move executable to root directory and clean up
 if exist %EXECUTABLE% (
-    echo El archivo ejecutable %EXECUTABLE% ha sido creado exitosamente.
+    echo [SUCCESS] Executable %EXECUTABLE% has been created successfully.
     
-    rem Mover el ejecutable a la carpeta principal si está en "dist"
+    :: Move executable to root if it's in dist
     if exist dist\%EXECUTABLE% (
+        echo [INFO] Moving executable to root folder...
         move /Y dist\%EXECUTABLE% .
     )
     
-    rem Limpiar carpetas y archivos generados por PyInstaller nuevamente
+    :: Clean up PyInstaller generated files
+    echo [INFO] Cleaning temporary files...
     if exist build rmdir /s /q build
     if exist dist rmdir /s /q dist
-    if exist main.spec del main.spec
+    if exist ImagesSpinesTool.spec del ImagesSpinesTool.spec
+    
+    :: Remove all __pycache__ folders after build
+    echo [INFO] Final cleanup of __pycache__ folders...
+    for /d /r %%d in (*__pycache__*) do (
+        echo [INFO] Removing %%d
+        rmdir /s /q "%%d"
+    )
 
 ) else (
-    echo Ha ocurrido un error al crear el ejecutable.
-)
-
-exit /b
-
-:RemovePycache
-if "%~1"=="" (
-    echo Por favor, proporciona el nombre de la carpeta como argumento.
-    exit /b 1
-)
-
-set "folder=%~1"
-
-rem Eliminar la carpeta __pycache__ dentro de la carpeta especificada
-if exist "%folder%\__pycache__" (
-    echo Eliminando %folder%\__pycache__...
-    rmdir /s /q "%folder%\__pycache__"
-    echo Carpeta %folder%\__pycache__ eliminada.
-) else (
-    echo La carpeta %folder%\__pycache__ no existe.
+    echo [ERROR] Failed to create executable.
 )
 
 exit /b
 
 :RemoveFile
 if "%~1"=="" (
-    echo Por favor, proporciona el nombre del archivo como argumento.
+    echo [ERROR] Please provide a file name as argument.
     exit /b 1
 )
 
 set "file=%~1"
 
-rem Elimina arhcivo
-if exist %file% del %file%
+:: Remove file
+if exist %file% (
+    echo [INFO] Removing file %file%...
+    del %file%
+)
 
 exit /b
 
 :RemoveFolder
 if "%~1"=="" (
-    echo Por favor, proporciona el nombre de la carpeta como argumento.
+    echo [ERROR] Please provide a folder name as argument.
     exit /b 1
 )
 
 set "folder=%~1"
 
-rem Elimina carpeta
-if exist %folder% rmdir /s /q %folder%
+:: Remove folder
+if exist %folder% (
+    echo [INFO] Removing folder %folder%...
+    rmdir /s /q %folder%
+)
 
 exit /b

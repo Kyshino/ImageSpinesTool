@@ -30,7 +30,13 @@ texts = {
         'processing': 'Processing',
         'creating': 'Creating',
         'available_extensions': 'Only accepts .png, .jpg, .jpeg, .webp extensions.',
-        'cancelled_message': 'Processing has been cancelled.'
+        'cancelled_message': 'Processing has been cancelled.',
+        'settings_tab': 'Settings',
+        'settings_section': 'Settings Section',
+        'image_processing_tab': 'Image Processing',
+        'side_margin_label': 'Side Margin',
+        'save_button': 'Save',
+        'settings_saved': 'Settings saved successfully!'
     },
     'es': {
         'title': 'Herramienta de Espinas de Imagen',
@@ -63,7 +69,13 @@ texts = {
         'processing': 'Procesando',
         'creating': 'Creando',
         'available_extensions': 'Sólo acepta .png, .jpg, .jpeg, .webp',
-        'cancelled_message': 'El procesamiento ha sido cancelado.'
+        'cancelled_message': 'El procesamiento ha sido cancelado.',
+        'settings_tab': 'Configuración',
+        'settings_section': 'Sección de Configuración',
+        'image_processing_tab': 'Procesamiento de Imágenes',
+        'side_margin_label': 'Margen Lateral',
+        'save_button': 'Guardar',
+        'settings_saved': '¡Configuración guardada correctamente!'
     },
     'fr': {
         'title': 'Outil de Spine d\'Image',
@@ -96,7 +108,13 @@ texts = {
         'processing': 'Traitement',
         'creating': 'Création',
         'available_extensions': 'Accepte uniquement les extensions .png, .jpg, .jpeg, .webp.',
-        'cancelled_message': 'Le traitement a été annulé.'
+        'cancelled_message': 'Le traitement a été annulé.',
+        'settings_tab': 'Configuration',
+        'settings_section': 'Section de Configuration',
+        'image_processing_tab': 'Traitement des Images',
+        'side_margin_label': 'Margen Lateral',
+        'save_button': 'Enregistrer',
+        'settings_saved': 'Les paramètres ont été enregistrés avec succès!'
     },
     'pt': {
         'title': 'Ferramenta de Costura de Imagens',
@@ -129,7 +147,13 @@ texts = {
         'processing': 'Processando',
         'creating': 'Criando',
         'available_extensions': 'Aceita apenas extensões .png, .jpg, .jpeg, .webp.',
-        'cancelled_message': 'O processamento foi cancelado.'
+        'cancelled_message': 'O processamento foi cancelado.',
+        'settings_tab': 'Configurações',
+        'settings_section': 'Seção de Configurações',
+        'image_processing_tab': 'Processamento de Imagens',
+        'side_margin_label': 'Margem Lateral',
+        'save_button': 'Salvar',
+        'settings_saved': 'As configurações foram salvas com sucesso!'
     },
     'de': {
         'title': 'Bild-Rückenwerkzeug',
@@ -162,7 +186,13 @@ texts = {
         'processing': 'Verarbeitung',
         'creating': 'Erstellen',
         'available_extensions': 'Akzeptiert nur .png, .jpg, .jpeg, .webp Erweiterungen.',
-        'cancelled_message': 'Die Verarbeitung wurde abgebrochen.'
+        'cancelled_message': 'Die Verarbeitung wurde abgebrochen.',
+        'settings_tab': 'Einstellungen',
+        'settings_section': 'Einstellungsbereich',
+        'image_processing_tab': 'Bild-Rückenwerkzeug',
+        'side_margin_label': 'Seitenrand',
+        'save_button': 'Speichern',
+        'settings_saved': 'Die Einstellungen wurden erfolgreich gespeichert!'
     },
     'it': {
         'title': 'Strumento Spine Immagine',
@@ -195,7 +225,13 @@ texts = {
         'processing': 'Elaborazione',
         'creating': 'Creazione',
         'available_extensions': 'Accetta solo estensioni .png, .jpg, .jpeg, .webp.',
-        'cancelled_message': 'L\'elaborazione è stata annullata.'
+        'cancelled_message': 'L\'elaborazione è stata annullata.',
+        'settings_tab': 'Impostazioni',
+        'settings_section': 'Sezione Impostazioni',
+        'image_processing_tab': 'Strumento Spine Immagine',
+        'side_margin_label': 'Margine Laterale',
+        'save_button': 'Salva',
+        'settings_saved': 'Le impostazioni sono state salvate correttamente!'
     },
     'zh': {
         'title': '图像脊工具',
@@ -228,7 +264,13 @@ texts = {
         'processing': '处理',
         'creating': '创建',
         'available_extensions': '仅接受 .png、.jpg、.jpeg、.webp 扩展名。',
-        'cancelled_message': '处理已被取消。'
+        'cancelled_message': '处理已被取消。',
+        'settings_tab': '设置',
+        'settings_section': '设置部分',
+        'image_processing_tab': '图像脊工具',
+        'side_margin_label': '边距',
+        'save_button': '保存',
+        'settings_saved': '设置已成功保存！'
     },
     'ru': {
         'title': 'Инструмент для изображений',
@@ -261,6 +303,90 @@ texts = {
         'processing': 'Обработка',
         'creating': 'Создание',
         'available_extensions': 'Принимает только расширения .png, .jpg, .jpeg, .webp.',
-        'cancelled_message': 'Обработка была отменена.'
+        'cancelled_message': 'Обработка была отменена.',
+        'settings_tab': 'Настройки',
+        'settings_section': 'Раздел настроек',
+        'image_processing_tab': 'Инструмент для изображений',
+        'side_margin_label': 'Полевой отступ',
+        'save_button': 'Сохранить',
+        'settings_saved': 'Настройки успешно сохранены!'
+    },
+    'ja': {
+        'title': '画像脊ツール',
+        'image_folder_label': '画像フォルダ',
+        'output_folder_label': '出力フォルダ',
+        'select_size_label': 'サイズを選択',
+        'select_paper_size_label': '紙のサイズを選択',
+        'process_button': '画像を処理',
+        'cancel_button': 'キャンセル',
+        'open_output_check': '処理が完了したら出力フォルダを開く',
+        'language_label': '言語を選択',
+        'error_image_folder': '画像フォルダが存在しません。',
+        'error_output_folder': '出力フォルダが存在しません。',
+        'success_message': '処理が正常に完了しました！',
+        'paper_types': {
+            'A4': 'A4',
+            'A3': 'A3',
+            'A5': 'A5',
+            'Carta': '手紙',
+            'Legal': '法律',
+            'B5': 'B5'
+        },
+        'paper_orientation_label': '方向',
+        'orientation_options': {
+            'portrait': '縦方向',
+            'landscape': '横方向'
+        },
+        'image_folder_tooltip': 'あなたの画像が保存されているフォルダを選択してください。',
+        'output_folder_tooltip': '処理された画像が保存されるフォルダを選択してください。',
+        'processing': '処理',
+        'creating': '作成',
+        'available_extensions': 'PNG、JPG、JPEG、WEBPの拡張子のみ受け付けます。',
+        'cancelled_message': '処理がキャンセルされました。',
+        'settings_tab': '設定',
+        'settings_section': '設定セクション',
+        'image_processing_tab': '画像脊ツール',
+        'side_margin_label': 'サイドマージン',
+        'save_button': '保存',
+        'settings_saved': '設定が正常に保存されました！'
+    },
+    'ko': {
+        'title': '이미지 스피네 도구',
+        'image_folder_label': '이미지 폴더',
+        'output_folder_label': '출력 폴더',
+        'select_size_label': '크기 선택',
+        'select_paper_size_label': '종이 크기 선택',
+        'process_button': '이미지 처리',
+        'cancel_button': '취소',
+        'open_output_check': '처리가 완료되면 출력 폴더를 엽니다',
+        'language_label': '언어 선택',
+        'error_image_folder': '이미지 폴더가 존재하지 않습니다.',
+        'error_output_folder': '출력 폴더가 존재하지 않습니다.',
+        'success_message': '처리가 성공적으로 완료되었습니다!',
+        'paper_types': {
+            'A4': 'A4',
+            'A3': 'A3',
+            'A5': 'A5',
+            'Carta': '서신',
+            'Legal': '법률',
+            'B5': 'B5'
+        },
+        'paper_orientation_label': '방향',
+        'orientation_options': {
+            'portrait': '세로',
+            'landscape': '가로'
+        },
+        'image_folder_tooltip': '당신의 이미지가 저장되어 있는 폴더를 선택하세요.',
+        'output_folder_tooltip': '처리된 이미지가 저장될 폴더를 선택하세요.',
+        'processing': '처리',
+        'creating': '작성',
+        'available_extensions': 'PNG, JPG, JPEG, WEBP 확장자만 받습니다.',
+        'cancelled_message': '처리가 취소되었습니다.',
+        'settings_tab': '설정',
+        'settings_section': '설정 섹션',
+        'image_processing_tab': '이미지 스피네 도구',
+        'side_margin_label': '측면 여백',
+        'save_button': '저장',
+        'settings_saved': '설정이 정상적으로 저장되었습니다!'
     }
 }
