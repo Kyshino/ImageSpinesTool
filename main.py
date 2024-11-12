@@ -16,7 +16,7 @@ class MainApplication:
         self.add_signature()
         
     def setup_window(self):
-        self.root.title('Image Spines Tool v0.3-beta')
+        self.root.title('Image Spines Tool v0.5-beta')
         
         # Try to set favicon, but continue if not found
         try:

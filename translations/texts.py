@@ -1,8 +1,8 @@
 texts = {
     'en': {
         'title': 'Image Spines Tool',
-        'image_folder_label': 'Image Folder',
-        'output_folder_label': 'Output Folder',
+        'image_folder_label': 'Images folder',
+        'output_folder_label': 'Output folder',
         'select_size_label': 'Select Size',
         'select_paper_size_label': 'Select Paper Size',
         'process_button': 'Process Images',
@@ -36,12 +36,14 @@ texts = {
         'image_processing_tab': 'Image Processing',
         'side_margin_label': 'Side Margin',
         'save_button': 'Save',
-        'settings_saved': 'Settings saved successfully!'
+        'settings_saved': 'Settings saved successfully!',
+        'spacing_label': 'Spacing between images',
+        'invalid_number': 'Please enter valid positive numbers'
     },
     'es': {
         'title': 'Herramienta de Espinas de Imagen',
-        'image_folder_label': 'Carpeta de Imágenes',
-        'output_folder_label': 'Carpeta de Salida',
+        'image_folder_label': 'Carpeta de imágenes',
+        'output_folder_label': 'Carpeta de salida',
         'select_size_label': 'Seleccionar Tamaño',
         'select_paper_size_label': 'Seleccionar Tamaño de Papel',
         'process_button': 'Procesar Imágenes',
@@ -75,12 +77,14 @@ texts = {
         'image_processing_tab': 'Procesamiento de Imágenes',
         'side_margin_label': 'Margen Lateral',
         'save_button': 'Guardar',
-        'settings_saved': '¡Configuración guardada correctamente!'
+        'settings_saved': '¡Configuración guardada correctamente!',
+        'spacing_label': 'Espaciado entre imágenes',
+        'invalid_number': 'Por favor, introduce números positivos válidos'
     },
     'fr': {
         'title': 'Outil de Spine d\'Image',
-        'image_folder_label': 'Dossier d\'Images',
-        'output_folder_label': 'Dossier de Sortie',
+        'image_folder_label': 'Dossier des images',
+        'output_folder_label': 'Dossier de sortie',
         'select_size_label': 'Sélectionner la Taille',
         'select_paper_size_label': 'Sélectionner le Format de Papier',
         'process_button': 'Traiter les Images',
@@ -114,12 +118,14 @@ texts = {
         'image_processing_tab': 'Traitement des Images',
         'side_margin_label': 'Margen Lateral',
         'save_button': 'Enregistrer',
-        'settings_saved': 'Les paramètres ont été enregistrés avec succès!'
+        'settings_saved': 'Les paramètres ont été enregistrés avec succès!',
+        'spacing_label': 'Espacement entre les images',
+        'invalid_number': 'Veuillez saisir des nombres positifs valides'
     },
     'pt': {
         'title': 'Ferramenta de Costura de Imagens',
-        'image_folder_label': 'Pasta de Imagens',
-        'output_folder_label': 'Pasta de Saída',
+        'image_folder_label': 'Pasta de imagens',
+        'output_folder_label': 'Pasta de saída',
         'select_size_label': 'Selecionar Tamanho',
         'select_paper_size_label': 'Selecionar Tamanho de Papel',
         'process_button': 'Processar Imagens',
@@ -153,12 +159,14 @@ texts = {
         'image_processing_tab': 'Processamento de Imagens',
         'side_margin_label': 'Margem Lateral',
         'save_button': 'Salvar',
-        'settings_saved': 'As configurações foram salvas com sucesso!'
+        'settings_saved': 'As configurações foram salvas com sucesso!',
+        'spacing_label': 'Espaçamento entre imagens',
+        'invalid_number': 'Por favor, insira números positivos válidos'
     },
     'de': {
         'title': 'Bild-Rückenwerkzeug',
         'image_folder_label': 'Bilderordner',
-        'output_folder_label': 'Ausgabeverzeichnis',
+        'output_folder_label': 'Ausgabeordner',
         'select_size_label': 'Größe auswählen',
         'select_paper_size_label': 'Papiergröße auswählen',
         'process_button': 'Bilder verarbeiten',
@@ -192,12 +200,14 @@ texts = {
         'image_processing_tab': 'Bild-Rückenwerkzeug',
         'side_margin_label': 'Seitenrand',
         'save_button': 'Speichern',
-        'settings_saved': 'Die Einstellungen wurden erfolgreich gespeichert!'
+        'settings_saved': 'Die Einstellungen wurden erfolgreich gespeichert!',
+        'spacing_label': 'Abstand zwischen Bildern',
+        'invalid_number': 'Bitte geben Sie gültige positive Zahlen ein'
     },
     'it': {
         'title': 'Strumento Spine Immagine',
-        'image_folder_label': 'Cartella Immagini',
-        'output_folder_label': 'Cartella di Uscita',
+        'image_folder_label': 'Cartella immagini',
+        'output_folder_label': 'Cartella di output',
         'select_size_label': 'Seleziona Dimensione',
         'select_paper_size_label': 'Seleziona Dimensione Carta',
         'process_button': 'Elabora Immagini',
@@ -231,7 +241,9 @@ texts = {
         'image_processing_tab': 'Strumento Spine Immagine',
         'side_margin_label': 'Margine Laterale',
         'save_button': 'Salva',
-        'settings_saved': 'Le impostazioni sono state salvate correttamente!'
+        'settings_saved': 'Le impostazioni sono state salvate correttamente!',
+        'spacing_label': 'Spaziatura tra le immagini',
+        'invalid_number': 'Inserisci numeri positivi validi'
     },
     'zh': {
         'title': '图像脊工具',
@@ -270,12 +282,14 @@ texts = {
         'image_processing_tab': '图像脊工具',
         'side_margin_label': '边距',
         'save_button': '保存',
-        'settings_saved': '设置已成功保存！'
+        'settings_saved': '设置已成功保存！',
+        'spacing_label': '图像间距',
+        'invalid_number': '请输入有效的正数'
     },
     'ru': {
         'title': 'Инструмент для изображений',
-        'image_folder_label': 'Папка с изображениями',
-        'output_folder_label': 'Выходная папка',
+        'image_folder_label': 'Папка изображений',
+        'output_folder_label': 'Папка вывода',
         'select_size_label': 'Выбрать размер',
         'select_paper_size_label': 'Выбрать размер бумаги',
         'process_button': 'Обработать изображения',
@@ -309,7 +323,9 @@ texts = {
         'image_processing_tab': 'Инструмент для изображений',
         'side_margin_label': 'Полевой отступ',
         'save_button': 'Сохранить',
-        'settings_saved': 'Настройки успешно сохранены!'
+        'settings_saved': 'Настройки успешно сохранены!',
+        'spacing_label': 'Интервал между изображениями',
+        'invalid_number': 'Пожалуйста, введите положительные числа'
     },
     'ja': {
         'title': '画像脊ツール',
@@ -348,7 +364,9 @@ texts = {
         'image_processing_tab': '画像脊ツール',
         'side_margin_label': 'サイドマージン',
         'save_button': '保存',
-        'settings_saved': '設定が正常に保存されました！'
+        'settings_saved': '設定が正常に保存されました！',
+        'spacing_label': '画像間の間隔',
+        'invalid_number': '有効な正の数値を入力してください'
     },
     'ko': {
         'title': '이미지 스피네 도구',
@@ -387,6 +405,8 @@ texts = {
         'image_processing_tab': '이미지 스피네 도구',
         'side_margin_label': '측면 여백',
         'save_button': '저장',
-        'settings_saved': '설정이 정상적으로 저장되었습니다!'
+        'settings_saved': '설정이 정상적으로 저장되었습니다!',
+        'spacing_label': '이미지 간 간격',
+        'invalid_number': '유효한 양수를 입력하세요'
     }
 }

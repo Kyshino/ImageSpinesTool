@@ -1,4 +1,4 @@
-from tkinter import Frame, Label, StringVar, BooleanVar, Checkbutton, messagebox
+from tkinter import Frame, Label, StringVar, BooleanVar, Checkbutton, messagebox, IntVar
 from tkinter import ttk
 import os
 import subprocess
@@ -14,7 +14,12 @@ from utils.widgets import (
     create_progress_elements,
     update_label_text
 )
-from utils.config_manager import get_side_margin
+from utils.config_manager import (
+    get_image_folder,
+    get_output_folder,
+    get_spacing,
+    get_side_margin
+)
 
 class ProcessingTab(Frame):
     def __init__(self, parent, current_language):
@@ -29,12 +34,20 @@ class ProcessingTab(Frame):
         # Variables
         self.selected_size = StringVar(value=list(sizes.keys())[0])
         self.selected_paper_type = StringVar(value=list(paper_horizontal_sizes.keys())[0])
-        self.images_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages")
-        self.output_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages\Output")
+        self.images_folder = StringVar(value=get_image_folder())
+        self.output_folder = StringVar(value=get_output_folder())
         self.open_output = BooleanVar(value=False)
         
+        self.setup_variables()
         self.setup_ui()
         parent.add(self, text=texts[self.current_language]['image_processing_tab'])
+
+    def setup_variables(self):
+        # Inicializar con los valores de la configuración
+        self.input_path = StringVar(value=get_image_folder())
+        self.output_path = StringVar(value=get_output_folder())
+        self.status = StringVar(value='')
+        self.progress = IntVar(value=0)
 
     def setup_ui(self):
         self.create_folder_inputs()
@@ -124,7 +137,7 @@ class ProcessingTab(Frame):
 
     def process_images(self, images_folder_path, output_folder_path, new_image_size, selected_size_name, paper_type):
         os.makedirs(output_folder_path, exist_ok=True)
-        spacing = 2
+        spacing = get_spacing()
         image_files = [f for f in os.listdir(images_folder_path) if f.endswith(('.png', '.jpg', '.jpeg', '.webp'))]
         canvas_count = 1
         x_offset = get_side_margin()
@@ -244,3 +257,8 @@ class ProcessingTab(Frame):
         self.size_combobox.set(self.selected_size.get())
         self.paper_combobox['values'] = list(paper_horizontal_sizes.keys())
         self.paper_combobox.set(self.selected_paper_type.get())
+
+    def refresh_paths(self):
+        """Actualiza los paths con los valores actuales de la configuración"""
+        self.images_folder.set(get_image_folder())
+        self.output_folder.set(get_output_folder())

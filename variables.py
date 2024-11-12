@@ -2,11 +2,13 @@ language_map = {
     "English": "en",
     "Español": "es",
     "Français": "fr",
-    "Português": "pt",
     "Deutsch": "de",
     "Italiano": "it",
-    "中文": "zh",
-    "Русский": "ru"
+    "Português": "pt",
+    "Русский": "ru",
+    "Chinese": "zh",
+    "Japanese": "ja",
+    "Korean": "ko"
 }
 
 sizes = {
@@ -23,4 +25,8 @@ paper_horizontal_sizes = {
     "B5": (2953, 2079)   # 176 mm x 250 mm (horizontal)
 }
 
-side_margin = 40
+side_margin = 60
+spacing = 4
+
+image_folder = r"C:\Users\Spines\Desktop\SpinesImages"
+output_folder = r"C:\Users\Spines\Desktop\SpinesImages\Output"
