@@ -10,8 +10,8 @@ class SettingsTab(Frame):
         super().__init__(parent)
         self.current_language = current_language
         
-        # Configure the grid of the tab
-        self.grid_columnconfigure(0, weight=1)
+        # Configurar el grid del tab
+        self.grid_columnconfigure(1, weight=1)
         
         self.setup_variables()
         self.setup_ui()
@@ -21,28 +21,24 @@ class SettingsTab(Frame):
         self.side_margin = StringVar(value=str(get_side_margin()))
 
     def setup_ui(self):
-        # Frame for side margin
-        margin_frame = Frame(self)
-        margin_frame.grid(row=0, column=0, padx=10, pady=10, sticky='w')
-        
-        # Label with default value
-        margin_label = Label(
-            margin_frame, 
+        # Label con valor por defecto
+        self.margin_label = Label(
+            self, 
             text=f"{texts[self.current_language]['side_margin_label']} (default: {default_side_margin})"
         )
-        margin_label.pack(side='left', padx=(0, 10))
+        self.margin_label.grid(row=0, column=0, padx=(10,5), pady=10, sticky='w')
         
-        # Entry for the value
-        self.margin_entry = ttk.Entry(margin_frame, textvariable=self.side_margin, width=10)
-        self.margin_entry.pack(side='left')
+        # Entry para el valor
+        self.margin_entry = ttk.Entry(self, textvariable=self.side_margin, width=10)
+        self.margin_entry.grid(row=0, column=1, padx=(0,10), pady=10, sticky='w')
 
         # Save button
-        self.save_button = create_button(
+        self.save_button = ttk.Button(
             self,
-            texts[self.current_language]['save_button'],
-            self.save_settings,
-            1
+            text=texts[self.current_language]['save_button'],
+            command=self.save_settings
         )
+        self.save_button.grid(row=1, column=0, columnspan=2, padx=10, pady=5, sticky='w')
 
     def save_settings(self):
         try:
@@ -60,13 +56,9 @@ class SettingsTab(Frame):
         self.master.tab(self, text=texts[self.current_language]['settings_tab'])
         
         # Update label with default value
-        for widget in self.winfo_children():
-            if isinstance(widget, Frame):
-                for child in widget.winfo_children():
-                    if isinstance(child, Label):
-                        child.config(
-                            text=f"{texts[self.current_language]['side_margin_label']} (default: {default_side_margin})"
-                        )
+        self.margin_label.config(
+            text=f"{texts[self.current_language]['side_margin_label']} (default: {default_side_margin})"
+        )
         
         # Update save button
         self.save_button.config(text=texts[self.current_language]['save_button'])

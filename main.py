@@ -40,14 +40,17 @@ class MainApplication:
 
         self.root.grid_columnconfigure(0, weight=1)
         self.root.grid_rowconfigure(1, weight=1)
+        self.root.configure(padx=20, pady=20)
 
     def setup_language_frame(self):
         language_frame = Frame(self.root)
-        language_frame.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+        language_frame.grid(row=0, column=0, sticky='ew', padx=10, pady=(0, 10))
+
+        language_frame.grid_columnconfigure(1, weight=1)
 
         self.language_selected = StringVar(value="English")
         language_label = Label(language_frame, text="Select language:")
-        language_label.pack(side='left', padx=(0, 10))
+        language_label.grid(row=0, column=0, padx=(0, 10), pady=5)
 
         language_combobox = ttk.Combobox(
             language_frame, 
@@ -56,7 +59,7 @@ class MainApplication:
             state='readonly', 
             width=15
         )
-        language_combobox.pack(side='left')
+        language_combobox.grid(row=0, column=1, sticky='w', pady=5)
         language_combobox.bind("<<ComboboxSelected>>", self.on_language_change)
 
     def setup_notebook(self):

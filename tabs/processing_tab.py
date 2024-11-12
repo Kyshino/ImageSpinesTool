@@ -23,8 +23,8 @@ class ProcessingTab(Frame):
         self.processing_thread = None
         self.processing_cancelled = False
         
-        # Configurar el grid del tab
-        self.grid_columnconfigure(0, weight=1)
+        # Configurar solo una columna principal
+        self.grid_columnconfigure(1, weight=1)
         
         # Variables
         self.selected_size = StringVar(value=list(sizes.keys())[0])
@@ -40,69 +40,87 @@ class ProcessingTab(Frame):
         self.create_folder_inputs()
         self.create_size_selectors()
         self.create_buttons()
-        self.create_progress_elements()
+        
+        # Crear un frame contenedor para los elementos de progreso
+        self.progress_frame = Frame(self)
+        self.progress_frame.grid(row=7, column=0, columnspan=2, padx=10, pady=5, sticky='ew')
+        self.progress_frame.grid_columnconfigure(0, weight=1)
+        
+        # Pre-crear los elementos de progreso pero mantenerlos ocultos
+        self.progress_label = Label(self.progress_frame, text="")
+        self.progress_label.grid(row=0, column=0, sticky='w')
+        self.progress_label.grid_remove()  # Ocultar pero mantener el espacio
+        
+        self.progress_bar = ttk.Progressbar(self.progress_frame, length=400, mode='determinate')
+        self.progress_bar.grid(row=1, column=0, sticky='ew')
+        self.progress_bar.grid_remove()  # Ocultar pero mantener el espacio
+        
         self.update_tooltips()
 
     def create_folder_inputs(self):
-        self.label_image_folder, self.entry_image_folder = create_label_and_entry(
-            self,
-            texts[self.current_language]['image_folder_label'], 
-            self.images_folder, 
-            1
-        )
-        self.label_output_folder, self.entry_output_folder = create_label_and_entry(
-            self,
-            texts[self.current_language]['output_folder_label'], 
-            self.output_folder, 
-            2
-        )
+        # Alinear todo a la izquierda
+        self.label_image_folder = Label(self, text=texts[self.current_language]['image_folder_label'])
+        self.label_image_folder.grid(row=1, column=0, padx=(10,5), pady=5, sticky='w')
+        
+        self.entry_image_folder = ttk.Entry(self, textvariable=self.images_folder)
+        self.entry_image_folder.grid(row=1, column=1, padx=(0,10), pady=5, sticky='ew')
+        
+        self.label_output_folder = Label(self, text=texts[self.current_language]['output_folder_label'])
+        self.label_output_folder.grid(row=2, column=0, padx=(10,5), pady=5, sticky='w')
+        
+        self.entry_output_folder = ttk.Entry(self, textvariable=self.output_folder)
+        self.entry_output_folder.grid(row=2, column=1, padx=(0,10), pady=5, sticky='ew')
 
     def create_size_selectors(self):
-        self.label_select_size, self.size_combobox = create_label_and_combobox(
+        self.label_select_size = Label(self, text=texts[self.current_language]['select_size_label'])
+        self.label_select_size.grid(row=3, column=0, padx=(10,5), pady=5, sticky='w')
+        
+        self.size_combobox = ttk.Combobox(
             self,
-            texts[self.current_language]['select_size_label'],
-            self.selected_size,
-            3,
-            list(sizes.keys()),
-            20
+            textvariable=self.selected_size,
+            values=list(sizes.keys()),
+            state='readonly',
+            width=20
         )
-        self.label_select_paper, self.paper_combobox = create_label_and_combobox(
+        self.size_combobox.grid(row=3, column=1, padx=(0,10), pady=5, sticky='w')
+        
+        self.label_select_paper = Label(self, text=texts[self.current_language]['select_paper_size_label'])
+        self.label_select_paper.grid(row=4, column=0, padx=(10,5), pady=5, sticky='w')
+        
+        self.paper_combobox = ttk.Combobox(
             self,
-            texts[self.current_language]['select_paper_size_label'],
-            self.selected_paper_type,
-            4,
-            list(paper_horizontal_sizes.keys()),
-            10
+            textvariable=self.selected_paper_type,
+            values=list(paper_horizontal_sizes.keys()),
+            state='readonly',
+            width=20
         )
+        self.paper_combobox.grid(row=4, column=1, padx=(0,10), pady=5, sticky='w')
 
     def create_buttons(self):
         self.checkbutton = Checkbutton(
-            self, 
-            text=texts[self.current_language]['open_output_check'], 
+            self,
+            text=texts[self.current_language]['open_output_check'],
             variable=self.open_output
         )
-        self.checkbutton.grid(row=5, column=0, padx=10, pady=5, sticky='w')
-
-        self.process_button = create_button(
-            self,
-            texts[self.current_language]['process_button'],
-            self.run_processing,
-            6
+        self.checkbutton.grid(row=5, column=0, columnspan=2, padx=10, pady=5, sticky='w')
+        
+        button_frame = Frame(self)
+        button_frame.grid(row=6, column=0, columnspan=2, padx=10, pady=5, sticky='w')
+        
+        self.process_button = ttk.Button(
+            button_frame,
+            text=texts[self.current_language]['process_button'],
+            command=self.run_processing
         )
-
-        self.cancel_button = create_button(
-            self,
-            texts[self.current_language]['cancel_button'],
-            self.cancel_processing,
-            6,
-            padx=120,
+        self.process_button.pack(side='left', padx=(0,5))
+        
+        self.cancel_button = ttk.Button(
+            button_frame,
+            text=texts[self.current_language]['cancel_button'],
+            command=self.cancel_processing,
             state='disabled'
         )
-
-    def create_progress_elements(self):
-        self.progress_label = Label(self, text=texts[self.current_language]['processing'])
-        self.progress_bar = ttk.Progressbar(self, length=400, mode='determinate')
-        # No agregamos los elementos al grid aquí, los mantenemos ocultos inicialmente
+        self.cancel_button.pack(side='left')
 
     def process_images(self, images_folder_path, output_folder_path, new_image_size, selected_size_name, paper_type):
         os.makedirs(output_folder_path, exist_ok=True)
@@ -151,10 +169,11 @@ class ProcessingTab(Frame):
         self.processing_cancelled = False
         self.process_button.config(state='disabled')
         self.cancel_button.config(state='normal')
-        # Mostramos los elementos de progreso solo cuando comienza el procesamiento
-        self.progress_label.grid(row=7, column=0, padx=10, pady=(5, 0), sticky='w')
-        self.progress_bar.grid(row=8, column=0, padx=10, pady=(0, 5), sticky='ew')
-
+        
+        # Mostrar los elementos de progreso
+        self.progress_label.grid()  # Mostrar label
+        self.progress_bar.grid()    # Mostrar barra
+        
         self.processing_thread = threading.Thread(target=self.process_images_thread)
         self.processing_thread.start()
 
@@ -193,8 +212,8 @@ class ProcessingTab(Frame):
         self.after(5000, self.hide_progress_elements)
 
     def hide_progress_elements(self):
-        self.progress_label.grid_forget()
-        self.progress_bar.grid_forget()
+        self.progress_label.grid_remove()  # Ocultar pero mantener espacio
+        self.progress_bar.grid_remove()    # Ocultar pero mantener espacio
 
     def cancel_processing(self):
         self.processing_cancelled = True
