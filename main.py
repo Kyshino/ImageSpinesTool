@@ -8,17 +8,20 @@ from translations.texts import texts
 from components.tooltip import ToolTip
 from variables import language_map, sizes, paper_horizontal_sizes, side_margin
 
+# Inicialización de la ventana principal
 root = Tk()
 current_language = 'en'
 root.title('Image Spines Tool v0.3-beta')
 favicon_path = './images/favicon.ico'
 
+# Configuración del ícono de la ventana
 favicon_image = Image.open(favicon_path)
 favicon = ImageTk.PhotoImage(favicon_image)
 root.iconphoto(False, favicon)
 
-root.resizable(False, False) 
+root.resizable(False, False)
 
+# Tamaño de la ventana y posición centrada
 window_width = 600
 window_height = 300
 screen_width = root.winfo_screenwidth()
@@ -27,15 +30,15 @@ x = (screen_width // 2) - (window_width // 2)
 y = (screen_height // 2) - (window_height // 2)
 root.geometry(f"{window_width}x{window_height}+{x}+{int(y)}")
 
+# Variables
 selected_size = StringVar(value=list(sizes.keys())[0])
 selected_paper_type = StringVar(value=list(paper_horizontal_sizes.keys())[0])
-
 images_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages")
 output_folder = StringVar(value=r"C:\Users\Spines\Desktop\SpinesImages\Output")
-
 processing_thread = None
 processing_cancelled = False
 
+# Funciones de creación de widgets
 def create_label_and_entry(parent, label_text, var, row, width=50):
     frame = Frame(parent)
     frame.grid(row=row, column=0, padx=10, pady=5, sticky='w')
@@ -54,6 +57,7 @@ def create_label_and_combobox(parent, label_text, var, row, options, width=50):
     combobox.pack(side='right')
     return label, combobox
 
+# Funciones de procesamiento de imágenes
 def process_images(images_folder_path, output_folder_path, new_image_size, selected_size_name, paper_type):
     global processing_cancelled
     os.makedirs(output_folder_path, exist_ok=True)
@@ -178,12 +182,9 @@ def update_texts():
         
     process_button.config(text=texts[current_language]['process_button'])
     cancel_button.config(text=texts[current_language]['cancel_button'])
-
     checkbutton.config(text=texts[current_language]['open_output_check'])
-
     size_combobox['values'] = list(sizes.keys())
     size_combobox.set(selected_size.get())
-
     paper_combobox['values'] = list(paper_horizontal_sizes.keys())
     paper_combobox.set(selected_paper_type.get())
 
@@ -199,6 +200,7 @@ def add_signature():
     signature = Label(root, text="By Kyshino", font=('Arial', 8), fg='gray', bg=root.cget("bg"))
     signature.place(relx=0.98, rely=0.99, anchor='se')
 
+# Frame para selección de idioma fuera del Notebook
 language_frame = Frame(root)
 language_frame.grid(row=0, column=0, padx=10, pady=10, sticky='w')
 
@@ -210,25 +212,41 @@ language_combobox = ttk.Combobox(language_frame, textvariable=language_selected,
 language_combobox.pack(side='left')
 language_combobox.bind("<<ComboboxSelected>>", on_language_change)
 
-label_image_folder, entry_image_folder = create_label_and_entry(root, texts[current_language]['image_folder_label'], images_folder, 1)
-label_output_folder, entry_output_folder = create_label_and_entry(root, texts[current_language]['output_folder_label'], output_folder, 2)
+# Notebook con dos pestañas
+notebook = ttk.Notebook(root)
+notebook.grid(row=1, column=0, padx=10, pady=10, sticky='nsew')
 
-label_select_size, size_combobox = create_label_and_combobox(root, texts[current_language]['select_size_label'], selected_size, 3, list(sizes.keys()), 20)
-label_select_paper, paper_combobox = create_label_and_combobox(root, texts[current_language]['select_paper_size_label'], selected_paper_type, 4, list(paper_horizontal_sizes.keys()), 10)
+tab_processing = Frame(notebook)
+notebook.add(tab_processing, text="Image Processing")
+
+label_image_folder, entry_image_folder = create_label_and_entry(tab_processing, texts[current_language]['image_folder_label'], images_folder, 1)
+label_output_folder, entry_output_folder = create_label_and_entry(tab_processing, texts[current_language]['output_folder_label'], output_folder, 2)
+label_select_size, size_combobox = create_label_and_combobox(tab_processing, texts[current_language]['select_size_label'], selected_size, 3, list(sizes.keys()), 20)
+label_select_paper, paper_combobox = create_label_and_combobox(tab_processing, texts[current_language]['select_paper_size_label'], selected_paper_type, 4, list(paper_horizontal_sizes.keys()), 10)
 
 open_output = BooleanVar(value=False)
-checkbutton = Checkbutton(root, text=texts[current_language]['open_output_check'], variable=open_output)
+checkbutton = Checkbutton(tab_processing, text=texts[current_language]['open_output_check'], variable=open_output)
 checkbutton.grid(row=5, column=0, padx=10, pady=5, sticky='w')
 
-process_button = Button(root, text=texts[current_language]['process_button'], command=run_processing)
+process_button = Button(tab_processing, text=texts[current_language]['process_button'], command=run_processing)
 process_button.grid(row=6, column=0, padx=10, pady=5, sticky='w')
 
-cancel_button = Button(root, text=texts[current_language]['cancel_button'], command=cancel_processing, state='disabled')
+cancel_button = Button(tab_processing, text=texts[current_language]['cancel_button'], command=cancel_processing, state='disabled')
 cancel_button.grid(row=6, column=0, padx=120, pady=5, sticky='w')
 
-progress_label = Label(root, text=texts[current_language]['processing'])
-progress_bar = ttk.Progressbar(root, length=400, mode='determinate')
+progress_label = Label(tab_processing, text=texts[current_language]['processing'])
+progress_bar = ttk.Progressbar(tab_processing, length=400, mode='determinate')
+
+# Segunda pestaña "Downloads"
+tab_downloads = Frame(notebook)
+notebook.add(tab_downloads, text="Downloads")
+
+downloads_label = Label(tab_downloads, text="Downloads Section")
+downloads_label.grid(row=0, column=0, padx=10, pady=10, sticky='w')
+
+# Tooltips y Firma
 update_tooltips()
 add_signature()
 
+# Loop principal de Tkinter
 root.mainloop()

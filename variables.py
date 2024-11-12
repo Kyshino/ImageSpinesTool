@@ -23,4 +23,4 @@ paper_horizontal_sizes = {
     "B5": (2953, 2079)   # 176 mm x 250 mm (horizontal)
 }
 
-side_margin = 20
+side_margin = 40
