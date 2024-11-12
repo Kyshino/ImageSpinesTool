@@ -38,7 +38,12 @@ texts = {
         'save_button': 'Save',
         'settings_saved': 'Settings saved successfully!',
         'spacing_label': 'Spacing between images',
-        'invalid_number': 'Please enter valid positive numbers'
+        'invalid_number': 'Please enter valid positive numbers',
+        'select_image_folder': 'Select Images Folder',
+        'select_output_folder': 'Select Output Folder',
+        'input_label': 'Images folder:',
+        'output_label': 'Output folder:',
+        'open_output': 'Open output folder after processing'
     },
     'es': {
         'title': 'Herramienta de Espinas de Imagen',
@@ -79,7 +84,12 @@ texts = {
         'save_button': 'Guardar',
         'settings_saved': '¡Configuración guardada correctamente!',
         'spacing_label': 'Espaciado entre imágenes',
-        'invalid_number': 'Por favor, introduce números positivos válidos'
+        'invalid_number': 'Por favor, introduce números positivos válidos',
+        'select_image_folder': 'Seleccionar Carpeta de Imágenes',
+        'select_output_folder': 'Seleccionar Carpeta de Salida',
+        'input_label': 'Carpeta de imágenes:',
+        'output_label': 'Carpeta de salida:',
+        'open_output': 'Abrir carpeta de salida después de procesar'
     },
     'fr': {
         'title': 'Outil de Spine d\'Image',
@@ -120,7 +130,12 @@ texts = {
         'save_button': 'Enregistrer',
         'settings_saved': 'Les paramètres ont été enregistrés avec succès!',
         'spacing_label': 'Espacement entre les images',
-        'invalid_number': 'Veuillez saisir des nombres positifs valides'
+        'invalid_number': 'Veuillez saisir des nombres positifs valides',
+        'select_image_folder': 'Sélectionner le Dossier d\'Images',
+        'select_output_folder': 'Sélectionner le Dossier de Sortie',
+        'input_label': 'Dossier d\'images:',
+        'output_label': 'Dossier de sortie:',
+        'open_output': 'Ouvrir le dossier de sortie après le traitement'
     },
     'pt': {
         'title': 'Ferramenta de Costura de Imagens',
@@ -161,7 +176,12 @@ texts = {
         'save_button': 'Salvar',
         'settings_saved': 'As configurações foram salvas com sucesso!',
         'spacing_label': 'Espaçamento entre imagens',
-        'invalid_number': 'Por favor, insira números positivos válidos'
+        'invalid_number': 'Por favor, insira números positivos válidos',
+        'select_image_folder': 'Selecionar Pasta de Imagens',
+        'select_output_folder': 'Selecionar Pasta de Saída',
+        'input_label': 'Pasta de imagens:',
+        'output_label': 'Pasta de saída:',
+        'open_output': 'Abrir pasta de saída após o processamento'
     },
     'de': {
         'title': 'Bild-Rückenwerkzeug',
@@ -202,7 +222,12 @@ texts = {
         'save_button': 'Speichern',
         'settings_saved': 'Die Einstellungen wurden erfolgreich gespeichert!',
         'spacing_label': 'Abstand zwischen Bildern',
-        'invalid_number': 'Bitte geben Sie gültige positive Zahlen ein'
+        'invalid_number': 'Bitte geben Sie gültige positive Zahlen ein',
+        'select_image_folder': 'Bilderordner auswählen',
+        'select_output_folder': 'Ausgabeordner auswählen',
+        'input_label': 'Bilderordner:',
+        'output_label': 'Ausgabeordner:',
+        'open_output': 'Ausgabeordner nach der Verarbeitung öffnen'
     },
     'it': {
         'title': 'Strumento Spine Immagine',
@@ -243,7 +268,12 @@ texts = {
         'save_button': 'Salva',
         'settings_saved': 'Le impostazioni sono state salvate correttamente!',
         'spacing_label': 'Spaziatura tra le immagini',
-        'invalid_number': 'Inserisci numeri positivi validi'
+        'invalid_number': 'Inserisci numeri positivi validi',
+        'select_image_folder': 'Seleziona Cartella Immagini',
+        'select_output_folder': 'Seleziona Cartella di Output',
+        'input_label': 'Cartella immagini:',
+        'output_label': 'Cartella di output:',
+        'open_output': 'Aprire la cartella di output dopo l\'elaborazione'
     },
     'zh': {
         'title': '图像脊工具',
@@ -284,7 +314,12 @@ texts = {
         'save_button': '保存',
         'settings_saved': '设置已成功保存！',
         'spacing_label': '图像间距',
-        'invalid_number': '请输入有效的正数'
+        'invalid_number': '请输入有效的正数',
+        'select_image_folder': '选择图像文件夹',
+        'select_output_folder': '选择输出文件夹',
+        'input_label': '图像文件夹：',
+        'output_label': '输出文件夹：',
+        'open_output': '处理后打开输出文件夹'
     },
     'ru': {
         'title': 'Инструмент для изображений',
@@ -325,7 +360,12 @@ texts = {
         'save_button': 'Сохранить',
         'settings_saved': 'Настройки успешно сохранены!',
         'spacing_label': 'Интервал между изображениями',
-        'invalid_number': 'Пожалуйста, введите положительные числа'
+        'invalid_number': 'Пожалуйста, введите положительные числа',
+        'select_image_folder': 'Выбрать Папку с Изображениями',
+        'select_output_folder': 'Выбрать Папку Вывода',
+        'input_label': 'Папка с изображениями:',
+        'output_label': 'Папка вывода:',
+        'open_output': 'Открыть папку вывода после обработки'
     },
     'ja': {
         'title': '画像脊ツール',
@@ -351,7 +391,7 @@ texts = {
         'paper_orientation_label': '方向',
         'orientation_options': {
             'portrait': '縦方向',
-            'landscape': '横方向'
+            'landscape': '方向'
         },
         'image_folder_tooltip': 'あなたの画像が保存されているフォルダを選択してください。',
         'output_folder_tooltip': '処理された画像が保存されるフォルダを選択してください。',
@@ -366,7 +406,12 @@ texts = {
         'save_button': '保存',
         'settings_saved': '設定が正常に保存されました！',
         'spacing_label': '画像間の間隔',
-        'invalid_number': '有効な正の数値を入力してください'
+        'invalid_number': '有効な正の数値を入力してください',
+        'select_image_folder': '画像フォルダを選択',
+        'select_output_folder': '出力フォルダを選択',
+        'input_label': '画像フォルダ：',
+        'output_label': '出力フォルダ：',
+        'open_output': '処理後に出力フォルダを開く'
     },
     'ko': {
         'title': '이미지 스피네 도구',
@@ -374,7 +419,7 @@ texts = {
         'output_folder_label': '출력 폴더',
         'select_size_label': '크기 선택',
         'select_paper_size_label': '종이 크기 선택',
-        'process_button': '이미지 처리',
+        'process_button': '이지 처리',
         'cancel_button': '취소',
         'open_output_check': '처리가 완료되면 출력 폴더를 엽니다',
         'language_label': '언어 선택',
@@ -407,6 +452,11 @@ texts = {
         'save_button': '저장',
         'settings_saved': '설정이 정상적으로 저장되었습니다!',
         'spacing_label': '이미지 간 간격',
-        'invalid_number': '유효한 양수를 입력하세요'
+        'invalid_number': '유효한 양수를 입력하세요',
+        'select_image_folder': '이미지 폴더 선택',
+        'select_output_folder': '출력 폴더 선택',
+        'input_label': '이미지 폴더:',
+        'output_label': '출력 폴더:',
+        'open_output': '처리 후 출력 폴더 열기'
     }
 }

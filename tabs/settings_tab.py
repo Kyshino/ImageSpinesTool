@@ -1,4 +1,4 @@
-from tkinter import Frame, Label, StringVar, messagebox
+from tkinter import Frame, Label, StringVar, messagebox, filedialog
 from tkinter import ttk
 from translations.texts import texts
 from utils.widgets import create_button
@@ -61,8 +61,19 @@ class SettingsTab(Frame):
         )
         self.image_folder_label.grid(row=2, column=0, padx=(10,5), pady=5, sticky='w')
         
-        self.image_folder_entry = ttk.Entry(self, textvariable=self.image_folder, width=70)
-        self.image_folder_entry.grid(row=2, column=1, padx=(0,10), pady=5, sticky='ew')
+        image_folder_frame = Frame(self)
+        image_folder_frame.grid(row=2, column=1, padx=(0,10), pady=5, sticky='ew')
+        image_folder_frame.columnconfigure(0, weight=1)
+        
+        self.image_folder_entry = ttk.Entry(image_folder_frame, textvariable=self.image_folder, width=70)
+        self.image_folder_entry.grid(row=0, column=0, sticky='ew')
+        
+        self.browse_image_button = ttk.Button(
+            image_folder_frame,
+            text="Browse",
+            command=self.browse_image_folder
+        )
+        self.browse_image_button.grid(row=0, column=1, padx=(5,0))
 
         # Carpeta de salida
         self.output_folder_label = Label(
@@ -71,8 +82,19 @@ class SettingsTab(Frame):
         )
         self.output_folder_label.grid(row=3, column=0, padx=(10,5), pady=5, sticky='w')
         
-        self.output_folder_entry = ttk.Entry(self, textvariable=self.output_folder, width=70)
-        self.output_folder_entry.grid(row=3, column=1, padx=(0,10), pady=5, sticky='ew')
+        output_folder_frame = Frame(self)
+        output_folder_frame.grid(row=3, column=1, padx=(0,10), pady=5, sticky='ew')
+        output_folder_frame.columnconfigure(0, weight=1)
+        
+        self.output_folder_entry = ttk.Entry(output_folder_frame, textvariable=self.output_folder, width=70)
+        self.output_folder_entry.grid(row=0, column=0, sticky='ew')
+        
+        self.browse_output_button = ttk.Button(
+            output_folder_frame,
+            text="Browse",
+            command=self.browse_output_folder
+        )
+        self.browse_output_button.grid(row=0, column=1, padx=(5,0))
 
         # Save button
         self.save_button = ttk.Button(
@@ -136,3 +158,19 @@ class SettingsTab(Frame):
         )
         
         self.save_button.config(text=texts[self.current_language]['save_button'])
+
+    def browse_image_folder(self):
+        folder = filedialog.askdirectory(
+            title=texts[self.current_language]['select_image_folder'],
+            initialdir=self.image_folder.get() or default_image_folder
+        )
+        if folder:
+            self.image_folder.set(folder)
+
+    def browse_output_folder(self):
+        folder = filedialog.askdirectory(
+            title=texts[self.current_language]['select_output_folder'],
+            initialdir=self.output_folder.get() or default_output_folder
+        )
+        if folder:
+            self.output_folder.set(folder)
