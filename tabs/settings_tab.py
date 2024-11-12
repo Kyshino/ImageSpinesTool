@@ -165,6 +165,8 @@ class SettingsTab(Frame):
             initialdir=self.image_folder.get() or default_image_folder
         )
         if folder:
+            # Reemplazar las barras / por \
+            folder = folder.replace('/', '\\')
             self.image_folder.set(folder)
 
     def browse_output_folder(self):
@@ -173,4 +175,6 @@ class SettingsTab(Frame):
             initialdir=self.output_folder.get() or default_output_folder
         )
         if folder:
+            # Reemplazar las barras / por \
+            folder = folder.replace('/', '\\')
             self.output_folder.set(folder)
