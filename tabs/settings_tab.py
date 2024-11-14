@@ -6,7 +6,9 @@ from utils.config_manager import (
     get_side_margin, set_side_margin,
     get_spacing, set_spacing,
     get_image_folder, set_image_folder,
-    get_output_folder, set_output_folder
+    get_output_folder, set_output_folder,
+    get_reddit_client_id, set_reddit_client_id,
+    get_reddit_client_secret, set_reddit_client_secret
 )
 from variables import (
     side_margin as default_side_margin,
@@ -21,7 +23,7 @@ class SettingsTab(Frame):
         self.current_language = current_language
         
         # Configurar el grid del tab
-        self.grid_columnconfigure(1, weight=1)
+        self.grid_columnconfigure(0, weight=1)
         
         self.setup_variables()
         self.setup_ui()
@@ -34,38 +36,51 @@ class SettingsTab(Frame):
         self.output_folder = StringVar(value=str(get_output_folder()))
 
     def setup_ui(self):
+        # Configurar el grid del tab
+        self.grid_columnconfigure(0, weight=1)
+        
+        # Grupo de Espaciado
+        self.spacing_frame = ttk.LabelFrame(self, text=texts[self.current_language]['spacing_section'])
+        self.spacing_frame.grid(row=0, column=0, padx=10, pady=(10,5), sticky='ew')
+        self.spacing_frame.grid_columnconfigure(1, weight=1)
+
         # Margen lateral
-        self.margin_label = Label(
-            self, 
+        self.margin_label = ttk.Label(
+            self.spacing_frame, 
             text=f"{texts[self.current_language]['side_margin_label']} (default: {default_side_margin})"
         )
-        self.margin_label.grid(row=0, column=0, padx=(10,5), pady=5, sticky='w')
+        self.margin_label.grid(row=0, column=0, padx=5, pady=5, sticky='w')
         
-        self.margin_entry = ttk.Entry(self, textvariable=self.side_margin, width=10)
-        self.margin_entry.grid(row=0, column=1, padx=(0,10), pady=5, sticky='w')
+        self.margin_entry = ttk.Entry(self.spacing_frame, textvariable=self.side_margin, width=10)
+        self.margin_entry.grid(row=0, column=1, padx=5, pady=5, sticky='w')
 
         # Espaciado
-        self.spacing_label = Label(
-            self, 
+        self.spacing_label = ttk.Label(
+            self.spacing_frame, 
             text=f"{texts[self.current_language]['spacing_label']} (default: {default_spacing})"
         )
-        self.spacing_label.grid(row=1, column=0, padx=(10,5), pady=5, sticky='w')
+        self.spacing_label.grid(row=1, column=0, padx=5, pady=5, sticky='w')
         
-        self.spacing_entry = ttk.Entry(self, textvariable=self.spacing, width=10)
-        self.spacing_entry.grid(row=1, column=1, padx=(0,10), pady=5, sticky='w')
+        self.spacing_entry = ttk.Entry(self.spacing_frame, textvariable=self.spacing, width=10)
+        self.spacing_entry.grid(row=1, column=1, padx=5, pady=5, sticky='w')
+
+        # Grupo de Carpetas
+        self.folders_frame = ttk.LabelFrame(self, text=texts[self.current_language]['folders_section'])
+        self.folders_frame.grid(row=1, column=0, padx=10, pady=5, sticky='ew')
+        self.folders_frame.grid_columnconfigure(1, weight=1)
 
         # Carpeta de imágenes
-        self.image_folder_label = Label(
-            self, 
-            text=f"{texts[self.current_language]['image_folder_label']}"
+        self.image_folder_label = ttk.Label(
+            self.folders_frame, 
+            text=texts[self.current_language]['image_folder_label']
         )
-        self.image_folder_label.grid(row=2, column=0, padx=(10,5), pady=5, sticky='w')
+        self.image_folder_label.grid(row=0, column=0, padx=5, pady=5, sticky='w')
         
-        image_folder_frame = Frame(self)
-        image_folder_frame.grid(row=2, column=1, padx=(0,10), pady=5, sticky='ew')
-        image_folder_frame.columnconfigure(0, weight=1)
+        image_folder_frame = ttk.Frame(self.folders_frame)
+        image_folder_frame.grid(row=0, column=1, padx=5, pady=5, sticky='ew')
+        image_folder_frame.grid_columnconfigure(0, weight=1)
         
-        self.image_folder_entry = ttk.Entry(image_folder_frame, textvariable=self.image_folder, width=70)
+        self.image_folder_entry = ttk.Entry(image_folder_frame, textvariable=self.image_folder)
         self.image_folder_entry.grid(row=0, column=0, sticky='ew')
         
         self.browse_image_button = ttk.Button(
@@ -76,17 +91,17 @@ class SettingsTab(Frame):
         self.browse_image_button.grid(row=0, column=1, padx=(5,0))
 
         # Carpeta de salida
-        self.output_folder_label = Label(
-            self, 
-            text=f"{texts[self.current_language]['output_folder_label']}"
+        self.output_folder_label = ttk.Label(
+            self.folders_frame, 
+            text=texts[self.current_language]['output_folder_label']
         )
-        self.output_folder_label.grid(row=3, column=0, padx=(10,5), pady=5, sticky='w')
+        self.output_folder_label.grid(row=1, column=0, padx=5, pady=5, sticky='w')
         
-        output_folder_frame = Frame(self)
-        output_folder_frame.grid(row=3, column=1, padx=(0,10), pady=5, sticky='ew')
-        output_folder_frame.columnconfigure(0, weight=1)
+        output_folder_frame = ttk.Frame(self.folders_frame)
+        output_folder_frame.grid(row=1, column=1, padx=5, pady=5, sticky='ew')
+        output_folder_frame.grid_columnconfigure(0, weight=1)
         
-        self.output_folder_entry = ttk.Entry(output_folder_frame, textvariable=self.output_folder, width=70)
+        self.output_folder_entry = ttk.Entry(output_folder_frame, textvariable=self.output_folder)
         self.output_folder_entry.grid(row=0, column=0, sticky='ew')
         
         self.browse_output_button = ttk.Button(
@@ -96,13 +111,40 @@ class SettingsTab(Frame):
         )
         self.browse_output_button.grid(row=0, column=1, padx=(5,0))
 
+        # Grupo de Reddit API
+        self.reddit_frame = ttk.LabelFrame(self, text=texts[self.current_language]['reddit_settings'])
+        self.reddit_frame.grid(row=2, column=0, padx=10, pady=5, sticky='ew')
+        self.reddit_frame.grid_columnconfigure(1, weight=1)
+
+        # Client ID
+        self.client_id_label = ttk.Label(
+            self.reddit_frame, 
+            text=texts[self.current_language]['client_id']
+        )
+        self.client_id_label.grid(row=0, column=0, padx=5, pady=5, sticky='w')
+        
+        self.client_id_var = StringVar(value=get_reddit_client_id())
+        self.client_id_entry = ttk.Entry(self.reddit_frame, textvariable=self.client_id_var)
+        self.client_id_entry.grid(row=0, column=1, padx=5, pady=5, sticky='ew')
+
+        # Client Secret
+        self.client_secret_label = ttk.Label(
+            self.reddit_frame, 
+            text=texts[self.current_language]['client_secret']
+        )
+        self.client_secret_label.grid(row=1, column=0, padx=5, pady=5, sticky='w')
+        
+        self.client_secret_var = StringVar(value=get_reddit_client_secret())
+        self.client_secret_entry = ttk.Entry(self.reddit_frame, textvariable=self.client_secret_var)
+        self.client_secret_entry.grid(row=1, column=1, padx=5, pady=5, sticky='ew')
+
         # Save button
         self.save_button = ttk.Button(
             self,
             text=texts[self.current_language]['save_button'],
             command=self.save_settings
         )
-        self.save_button.grid(row=4, column=0, columnspan=2, padx=10, pady=10, sticky='w')
+        self.save_button.grid(row=3, column=0, padx=10, pady=10, sticky='w')
 
     def save_settings(self):
         try:
@@ -111,6 +153,8 @@ class SettingsTab(Frame):
             spacing_value = self.spacing.get().strip()
             image_folder_value = self.image_folder.get().strip()
             output_folder_value = self.output_folder.get().strip()
+            client_id_value = self.client_id_var.get().strip()
+            client_secret_value = self.client_secret_var.get().strip()
             
             # Convertir y validar números
             new_margin = int(margin_value) if margin_value else default_side_margin
@@ -129,12 +173,8 @@ class SettingsTab(Frame):
             set_spacing(new_spacing)
             set_image_folder(new_image_folder)
             set_output_folder(new_output_folder)
-            
-            # Refrescar los inputs con los valores guardados
-            self.side_margin.set(str(get_side_margin()))
-            self.spacing.set(str(get_spacing()))
-            self.image_folder.set(get_image_folder())
-            self.output_folder.set(get_output_folder())
+            set_reddit_client_id(client_id_value)
+            set_reddit_client_secret(client_secret_value)
             
             messagebox.showinfo("Success", texts[self.current_language]['settings_saved'])
         except ValueError:
@@ -144,12 +184,20 @@ class SettingsTab(Frame):
         self.current_language = new_language
         self.master.tab(self, text=texts[self.current_language]['settings_tab'])
         
+        # Actualizar etiquetas de sección
+        self.spacing_frame.configure(text=texts[self.current_language]['spacing_section'])
+        self.folders_frame.configure(text=texts[self.current_language]['folders_section'])
+        self.reddit_frame.configure(text=texts[self.current_language]['reddit_settings'])
+        
+        # Actualizar etiquetas de espaciado
         self.margin_label.config(
             text=f"{texts[self.current_language]['side_margin_label']} (default: {default_side_margin})"
         )
         self.spacing_label.config(
             text=f"{texts[self.current_language]['spacing_label']} (default: {default_spacing})"
         )
+        
+        # Actualizar etiquetas de carpetas
         self.image_folder_label.config(
             text=texts[self.current_language]['image_folder_label']
         )
@@ -157,6 +205,15 @@ class SettingsTab(Frame):
             text=texts[self.current_language]['output_folder_label']
         )
         
+        # Actualizar etiquetas de Reddit
+        self.client_id_label.config(
+            text=texts[self.current_language]['client_id']
+        )
+        self.client_secret_label.config(
+            text=texts[self.current_language]['client_secret']
+        )
+        
+        # Actualizar botón de guardar
         self.save_button.config(text=texts[self.current_language]['save_button'])
 
     def browse_image_folder(self):

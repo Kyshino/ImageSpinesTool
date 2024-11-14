@@ -30,3 +30,5 @@ spacing = 4
 
 image_folder = r"C:\Users\Spines\Desktop\SpinesImages"
 output_folder = r"C:\Users\Spines\Desktop\SpinesImages\Output"
+reddit_client_id = ""
+reddit_client_secret = ""

@@ -5,6 +5,8 @@ from variables import side_margin as default_side_margin
 from variables import spacing as default_spacing
 from variables import image_folder as default_image_folder
 from variables import output_folder as default_output_folder
+from variables import reddit_client_id as default_reddit_client_id
+from variables import reddit_client_secret as default_reddit_client_secret
 
 def get_executable_path():
     """Get the path of the executable or script"""
@@ -30,13 +32,17 @@ def load_config():
                 'side_margin': default_side_margin,
                 'spacing': default_spacing,
                 'image_folder': default_image_folder,
-                'output_folder': default_output_folder
+                'output_folder': default_output_folder,
+                'reddit_client_id': default_reddit_client_id,
+                'reddit_client_secret': default_reddit_client_secret
             }
     return {
         'side_margin': default_side_margin,
         'spacing': default_spacing,
         'image_folder': default_image_folder,
-        'output_folder': default_output_folder
+        'output_folder': default_output_folder,
+        'reddit_client_id': default_reddit_client_id,
+        'reddit_client_secret': default_reddit_client_secret
     }
 
 def save_config(config):
@@ -86,4 +92,24 @@ def get_output_folder():
 def set_output_folder(value):
     config = load_config()
     config['output_folder'] = value
+    return save_config(config)
+
+def get_reddit_client_id():
+    config = load_config()
+    value = config.get('reddit_client_id', default_reddit_client_id)
+    return default_reddit_client_id if value == '' else value
+
+def set_reddit_client_id(value):
+    config = load_config()
+    config['reddit_client_id'] = value
+    return save_config(config)
+
+def get_reddit_client_secret():
+    config = load_config()
+    value = config.get('reddit_client_secret', default_reddit_client_secret)
+    return default_reddit_client_secret if value == '' else value
+
+def set_reddit_client_secret(value):
+    config = load_config()
+    config['reddit_client_secret'] = value
     return save_config(config) 

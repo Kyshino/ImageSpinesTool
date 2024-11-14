@@ -8,10 +8,6 @@ from components.tooltip import ToolTip
 from translations.texts import texts
 from variables import sizes, paper_horizontal_sizes, side_margin
 from utils.widgets import (
-    create_label_and_entry,
-    create_label_and_combobox,
-    create_button,
-    create_progress_elements,
     update_label_text
 )
 from utils.config_manager import (

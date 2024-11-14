@@ -7,13 +7,13 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Nintendo%20Switch-red.svg)]()
 
-[🇬🇧 English](#english) | [🇪🇸 Español](#español)
+[🇺🇸 English](#english) | [🇪🇸 Español](#español)
 
 </div>
 
 ---
 
-## <a name="english"></a>🇬🇧 English
+## <a name="english"></a>🇺🇸 English
 
 ### 📝 Overview
 Image Spines Tool is a desktop application that helps you process and manage image spines for your Nintendo Switch digital collections.
