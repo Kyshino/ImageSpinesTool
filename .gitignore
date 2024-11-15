@@ -1,0 +1,5 @@
+ImagesSpinesTool.exe
+__pycache__/
+Thumbs.db
+settings.json
+downloaded_spines/*
