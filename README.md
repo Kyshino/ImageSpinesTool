@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-0.5_beta-blue)
+![Version](https://img.shields.io/badge/version-1.0-blue)
 ![Python](https://img.shields.io/badge/Python-3.8+-green.svg)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-Nintendo%20Switch-red.svg)]()
@@ -22,7 +22,7 @@ Image Spines Tool is a desktop application that helps you process and manage ima
 - 🔄 Batch image processing
 - 🌍 Multiple language support
 - ⚙️ Customizable settings
-- 🎨 Image spine extraction
+- 🎨 Image spine extraction [Soon]
 - 🎮 Nintendo Switch format support
 
 ### 🚀 Installation Options
@@ -73,9 +73,9 @@ If you find this tool useful, you can support its development:
 
 <div align="center">
 
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/kyshino)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=RANLKSWR8UZC2)
 
-ETH: `0x000...` | SOL: `000...`
+ETH: `0xBE3a332E0e3BAFddF3ebD95A92c3da401b7BC876` | SOL: `ErZRFq4vh23ukJ2eT5QpsMDmewffwaqB8FSFoTjy825`
 
 </div>
 
@@ -90,7 +90,7 @@ Image Spines Tool es una aplicación de escritorio que te ayuda a procesar y ges
 - 🔄 Procesamiento por lotes
 - 🌍 Soporte multiidioma
 - ⚙️ Ajustes personalizables
-- 🎨 Extracción de lomos
+- 🎨 Extracción de lomos [Próximamente]
 - 🎮 Soporte para formato Nintendo Switch
 
 ### 🚀 Opciones de Instalación
@@ -141,9 +141,9 @@ Si encuentras útil esta herramienta, puedes apoyar su desarrollo:
 
 <div align="center">
 
-[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/kyshino)
+[![PayPal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=RANLKSWR8UZC2)
 
-ETH: `0x000...` | SOL: `000...`
+ETH: `0xBE3a332E0e3BAFddF3ebD95A92c3da401b7BC876` | SOL: `ErZRFq4vh23ukJ2eT5QpsMDmewffwaqB8FSFoTjy825`
 
 </div>
 

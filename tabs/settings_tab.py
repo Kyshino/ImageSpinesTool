@@ -7,8 +7,8 @@ from utils.config_manager import (
     get_spacing, set_spacing,
     get_image_folder, set_image_folder,
     get_output_folder, set_output_folder,
-    get_reddit_client_id, set_reddit_client_id,
-    get_reddit_client_secret, set_reddit_client_secret
+    # get_reddit_client_id, set_reddit_client_id,
+    # get_reddit_client_secret, set_reddit_client_secret
 )
 from variables import (
     side_margin as default_side_margin,
@@ -47,7 +47,7 @@ class SettingsTab(Frame):
         # Margen lateral
         self.margin_label = ttk.Label(
             self.spacing_frame, 
-            text=f"{texts[self.current_language]['side_margin_label']} (default: {default_side_margin})"
+            text=f"{texts[self.current_language]['side_margin_label']} (default: {default_side_margin}{'px'})"
         )
         self.margin_label.grid(row=0, column=0, padx=5, pady=5, sticky='w')
         
@@ -57,7 +57,7 @@ class SettingsTab(Frame):
         # Espaciado
         self.spacing_label = ttk.Label(
             self.spacing_frame, 
-            text=f"{texts[self.current_language]['spacing_label']} (default: {default_spacing})"
+            text=f"{texts[self.current_language]['spacing_label']} (default: {default_spacing}{'px'})"
         )
         self.spacing_label.grid(row=1, column=0, padx=5, pady=5, sticky='w')
         
@@ -111,40 +111,13 @@ class SettingsTab(Frame):
         )
         self.browse_output_button.grid(row=0, column=1, padx=(5,0))
 
-        # Grupo de Reddit API
-        self.reddit_frame = ttk.LabelFrame(self, text=texts[self.current_language]['reddit_settings'])
-        self.reddit_frame.grid(row=2, column=0, padx=10, pady=5, sticky='ew')
-        self.reddit_frame.grid_columnconfigure(1, weight=1)
-
-        # Client ID
-        self.client_id_label = ttk.Label(
-            self.reddit_frame, 
-            text=texts[self.current_language]['client_id']
-        )
-        self.client_id_label.grid(row=0, column=0, padx=5, pady=5, sticky='w')
-        
-        self.client_id_var = StringVar(value=get_reddit_client_id())
-        self.client_id_entry = ttk.Entry(self.reddit_frame, textvariable=self.client_id_var)
-        self.client_id_entry.grid(row=0, column=1, padx=5, pady=5, sticky='ew')
-
-        # Client Secret
-        self.client_secret_label = ttk.Label(
-            self.reddit_frame, 
-            text=texts[self.current_language]['client_secret']
-        )
-        self.client_secret_label.grid(row=1, column=0, padx=5, pady=5, sticky='w')
-        
-        self.client_secret_var = StringVar(value=get_reddit_client_secret())
-        self.client_secret_entry = ttk.Entry(self.reddit_frame, textvariable=self.client_secret_var)
-        self.client_secret_entry.grid(row=1, column=1, padx=5, pady=5, sticky='ew')
-
-        # Save button
+        # Mover el botón de guardar a row=2 en lugar de row=3 ya que eliminamos el frame de Reddit
         self.save_button = ttk.Button(
             self,
             text=texts[self.current_language]['save_button'],
             command=self.save_settings
         )
-        self.save_button.grid(row=3, column=0, padx=10, pady=10, sticky='w')
+        self.save_button.grid(row=2, column=0, padx=10, pady=10, sticky='w')
 
     def save_settings(self):
         try:
@@ -153,8 +126,9 @@ class SettingsTab(Frame):
             spacing_value = self.spacing.get().strip()
             image_folder_value = self.image_folder.get().strip()
             output_folder_value = self.output_folder.get().strip()
-            client_id_value = self.client_id_var.get().strip()
-            client_secret_value = self.client_secret_var.get().strip()
+            # Comentar las variables de Reddit
+            # client_id_value = self.client_id_var.get().strip()
+            # client_secret_value = self.client_secret_var.get().strip()
             
             # Convertir y validar números
             new_margin = int(margin_value) if margin_value else default_side_margin
@@ -168,13 +142,15 @@ class SettingsTab(Frame):
             new_image_folder = image_folder_value if image_folder_value else default_image_folder
             new_output_folder = output_folder_value if output_folder_value else default_output_folder
             
+            # Comentar el guardado de valores de Reddit
+            # set_reddit_client_id(client_id_value)
+            # set_reddit_client_secret(client_secret_value)
+            
             # Guardar valores
             set_side_margin(new_margin)
             set_spacing(new_spacing)
             set_image_folder(new_image_folder)
             set_output_folder(new_output_folder)
-            set_reddit_client_id(client_id_value)
-            set_reddit_client_secret(client_secret_value)
             
             messagebox.showinfo("Success", texts[self.current_language]['settings_saved'])
         except ValueError:
@@ -187,7 +163,16 @@ class SettingsTab(Frame):
         # Actualizar etiquetas de sección
         self.spacing_frame.configure(text=texts[self.current_language]['spacing_section'])
         self.folders_frame.configure(text=texts[self.current_language]['folders_section'])
-        self.reddit_frame.configure(text=texts[self.current_language]['reddit_settings'])
+        # Comentar la actualización de etiquetas de Reddit
+        """
+        # Actualizar etiquetas de Reddit
+        self.client_id_label.config(
+            text=texts[self.current_language]['client_id']
+        )
+        self.client_secret_label.config(
+            text=texts[self.current_language]['client_secret']
+        )
+        """
         
         # Actualizar etiquetas de espaciado
         self.margin_label.config(
@@ -203,14 +188,6 @@ class SettingsTab(Frame):
         )
         self.output_folder_label.config(
             text=texts[self.current_language]['output_folder_label']
-        )
-        
-        # Actualizar etiquetas de Reddit
-        self.client_id_label.config(
-            text=texts[self.current_language]['client_id']
-        )
-        self.client_secret_label.config(
-            text=texts[self.current_language]['client_secret']
         )
         
         # Actualizar botón de guardar

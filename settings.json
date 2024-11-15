@@ -1,3 +1,8 @@
 {
-    "side_margin": 40
+    "side_margin": 150,
+    "reddit_client_id": "iAEHBhw_erbFtT8vjG1rUQ",
+    "reddit_client_secret": "h8OCaxI81dA1zdB2ZHCmEE5JH2El8w",
+    "spacing": 4,
+    "image_folder": "C:\\Users\\KyshinoDesktop\\Desktop\\Nueva carpeta",
+    "output_folder": "C:\\Users\\KyshinoDesktop\\Desktop\\Nueva carpeta\\Output"
 }

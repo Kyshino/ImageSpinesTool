@@ -26,7 +26,7 @@ paper_horizontal_sizes = {
 }
 
 side_margin = 60
-spacing = 4
+spacing = 1
 
 image_folder = r"C:\Users\Spines\Desktop\SpinesImages"
 output_folder = r"C:\Users\Spines\Desktop\SpinesImages\Output"

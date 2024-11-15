@@ -1,5 +1,8 @@
 texts = {
     'en': {
+        'image_processing_tab': 'Image Processing',
+        'settings_tab': 'Settings',
+        'support_me': 'Support me',
         # Tabs
         'settings_tab': 'Settings',
         'image_processing_tab': 'Image Processing',
@@ -153,6 +156,7 @@ texts = {
     'credentials_ok': 'Credenciales correctas, iniciando descarga...',
     'missing_credentials': 'Faltan las credenciales de Reddit. Por favor, configúralas en la pestaña de Ajustes.',
     'invalid_credentials': 'Credenciales de Reddit inválidas. Por favor, verifica tu Client ID y Secret en la pestaña de Ajustes.',
+    'support_me': 'Apóyame',
 },
 
 # French ("fr")
@@ -225,6 +229,7 @@ texts = {
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': 'Soutenez-moi',
 },
     'de': {
     'settings_tab': 'Einstellungen',
@@ -295,6 +300,7 @@ texts = {
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': 'Unterstütze mich',
 },
 
 # Italian ("it")
@@ -367,6 +373,7 @@ texts = {
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': 'Supportami',
 },
    # Portuguese ("pt")
 'pt': {
@@ -431,13 +438,14 @@ texts = {
     'output_folder_label': 'Pasta de Saída',
     'save_button': 'Salvar Configurações',
     'settings_saved': 'Configurações salvas com sucesso!',
-    'invalid_number': 'Por favor, insira números válidos para margem e espa��amento',
+    'invalid_number': 'Por favor, insira números válidos para margem e espaçamento',
     'select_image_folder': 'Selecionar Pasta de Imagens',
     'select_output_folder': 'Selecionar Pasta de Saída',
     'checking_credentials': 'Checking Reddit credentials...',
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': 'Apoie-me',
 },
 
 # Russian ("ru")
@@ -510,6 +518,7 @@ texts = {
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': 'Поддержите меня',
 },
 
 # Chinese ("zh")
@@ -582,6 +591,7 @@ texts = {
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': '支持我',
 },
 
 # Japanese ("ja")
@@ -654,6 +664,7 @@ texts = {
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': '支援する',
 },
 
 # Korean ("ko")
@@ -726,5 +737,6 @@ texts = {
     'credentials_ok': 'Credentials OK, starting download...',
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+    'support_me': '후원하기',
 }
 }
