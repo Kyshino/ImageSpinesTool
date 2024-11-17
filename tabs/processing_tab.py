@@ -258,19 +258,3 @@ class ProcessingTab(Frame):
         """Actualiza los paths con los valores actuales de la configuración"""
         self.images_folder.set(get_image_folder())
         self.output_folder.set(get_output_folder())
-
-    def browse_input_folder(self):
-        folder = filedialog.askdirectory(
-            title=texts[self.current_language]['select_image_folder'],
-            initialdir=self.images_folder.get() or default_image_folder
-        )
-        if folder:
-            self.images_folder.set(folder)
-
-    def browse_output_folder(self):
-        folder = filedialog.askdirectory(
-            title=texts[self.current_language]['select_output_folder'],
-            initialdir=self.output_folder.get() or default_output_folder
-        )
-        if folder:
-            self.output_folder.set(folder)

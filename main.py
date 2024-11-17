@@ -1,11 +1,12 @@
-from tkinter import Tk, Label, Frame, StringVar
+from tkinter import Tk, Label, Frame, StringVar, messagebox
 from tkinter import ttk
 from PIL import Image, ImageTk
 from tabs.processing_tab import ProcessingTab
 from tabs.settings_tab import SettingsTab
 from translations.texts import texts
 from variables import language_map
-from version import FULL_APP_NAME
+from version import FULL_APP_NAME, VERSION
+from utils.utils import open_support_link, check_for_updates
 
 class MainApplication:
     def __init__(self):
@@ -16,6 +17,7 @@ class MainApplication:
         self.setup_language_frame()
         self.setup_notebook()
         self.add_signature()
+        check_for_updates(self.current_language)
         
     def setup_window(self):
         self.root.title(FULL_APP_NAME)
@@ -101,11 +103,10 @@ class MainApplication:
             bg=self.root.cget("bg")
         )
         self.support_link.pack(side='left', padx=(0, 0))
-        self.support_link.bind("<Button-1>", lambda e: self.open_support_link())
+        self.support_link.bind("<Button-1>", lambda e: self.open_support_link(e))
 
-    def open_support_link(self):
-        import webbrowser
-        webbrowser.open("https://www.paypal.com/donate/?hosted_button_id=RANLKSWR8UZC2")
+    def open_support_link(self, event):
+        open_support_link()  # Llamamos directamente a la función
 
     def run(self):
         self.root.mainloop()

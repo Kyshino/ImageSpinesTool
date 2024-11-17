@@ -86,6 +86,11 @@ texts = {
         'credentials_ok': 'Credentials OK, starting download...',
         'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
         'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
+        'update_title': 'Update available',
+        'update_available': 'A new version is available: {}\nYour current version is: {}\n\nDo you want to download it?',
+        'update_error': 'Error checking for updates',
+        'update_check': 'Checking for updates...',
+        'up_to_date': 'Software is up to date'
     },
     'es': {
     'settings_tab': 'Configuración',
@@ -157,6 +162,11 @@ texts = {
     'missing_credentials': 'Faltan las credenciales de Reddit. Por favor, configúralas en la pestaña de Ajustes.',
     'invalid_credentials': 'Credenciales de Reddit inválidas. Por favor, verifica tu Client ID y Secret en la pestaña de Ajustes.',
     'support_me': 'Apóyame',
+    'update_title': 'Actualización disponible',
+    'update_available': 'Hay una nueva versión disponible: {}\nTu versión actual es: {}\n\n¿Quieres descargarla?',
+    'update_error': 'Error al verificar actualizaciones',
+    'update_check': 'Comprobando actualizaciones...',
+    'up_to_date': 'El software está actualizado'
 },
 
 # French ("fr")
@@ -230,6 +240,11 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': 'Soutenez-moi',
+    'update_title': 'Mise à jour disponible',
+    'update_available': 'Une nouvelle version est disponible : {}\nVotre version actuelle est : {}\n\nVoulez-vous la télécharger ?',
+    'update_error': 'Erreur lors de la vérification des mises à jour',
+    'update_check': 'Vérification des mises à jour...',
+    'up_to_date': 'Le logiciel est à jour'
 },
     'de': {
     'settings_tab': 'Einstellungen',
@@ -301,6 +316,11 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': 'Unterstütze mich',
+    'update_title': 'Update verfügbar',
+    'update_available': 'Eine neue Version ist verfügbar: {}\nIhre aktuelle Version ist: {}\n\nMöchten Sie sie herunterladen?',
+    'update_error': 'Fehler beim Prüfen auf Updates',
+    'update_check': 'Suche nach Updates...',
+    'up_to_date': 'Software ist auf dem neuesten Stand'
 },
 
 # Italian ("it")
@@ -374,6 +394,11 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': 'Supportami',
+    'update_title': 'Aggiornamento disponibile',
+    'update_available': 'È disponibile una nuova versione: {}\nLa tua versione attuale è: {}\n\nVuoi scaricarla?',
+    'update_error': 'Errore durante il controllo degli aggiornamenti',
+    'update_check': 'Controllo aggiornamenti...',
+    'up_to_date': 'Il software è aggiornato'
 },
    # Portuguese ("pt")
 'pt': {
@@ -446,6 +471,11 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': 'Apoie-me',
+    'update_title': 'Atualização disponível',
+    'update_available': 'Uma nova versão está disponível: {}\nSua versão atual é: {}\n\nDeseja baixar?',
+    'update_error': 'Erro ao verificar atualizações',
+    'update_check': 'Verificando atualizações...',
+    'up_to_date': 'O software está atualizado'
 },
 
 # Russian ("ru")
@@ -519,6 +549,11 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': 'Поддержите меня',
+    'update_title': 'Доступно обновление',
+    'update_available': 'Доступна новая версия: {}\nВаша текущая версия: {}\n\nХотите загрузить её?',
+    'update_error': 'Ошибка при проверке обновлений',
+    'update_check': 'Проверка обновлений...',
+    'up_to_date': 'Программное обеспечение обновлено'
 },
 
 # Chinese ("zh")
@@ -592,6 +627,11 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': '支持我',
+    'update_title': '更新可用',
+    'update_available': '有新版本可用：{}\n当前版本：{}\n\n您要下载吗？',
+    'update_error': '检查更新时出错',
+    'update_check': '正在检查更新...',
+    'up_to_date': '软件已是最新版本'
 },
 
 # Japanese ("ja")
@@ -665,6 +705,11 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': '支援する',
+    'update_title': 'アップデート可能',
+    'update_available': '新しいバージョンが利用可能です：{}\n現在のバージョン：{}\n\nダウンロードしますか？',
+    'update_error': 'アップデートの確認中にエラーが発生しました',
+    'update_check': 'アップデートを確認中...',
+    'up_to_date': 'ソフトウェアは最新です'
 },
 
 # Korean ("ko")
@@ -738,5 +783,10 @@ texts = {
     'missing_credentials': 'Missing Reddit credentials. Please configure them in Settings tab.',
     'invalid_credentials': 'Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.',
     'support_me': '후원하기',
+    'update_title': '업데이트 가능',
+    'update_available': '새로운 버전이 있습니다: {}\n현재 버전: {}\n\n다운로드하시겠습니까?',
+    'update_error': '업데이트 확인 중 오류 발생',
+    'update_check': '업데이트 확인 중...',
+    'up_to_date': '소프트웨어가 최신 상태입니다'
 }
 }
