@@ -1,0 +1,109 @@
+# Onglets
+spine_creator_tab: Créateur de Spine
+settings_tab: Paramètres
+image_processing_tab: Traitement d'Images
+support_me: Me Soutenir
+downloads_tab: Téléchargements
+
+# Créateur de Spine
+pattern_settings: Paramètres de Motif
+platform: Plateforme
+pattern_type: Type de Motif
+output_path: Chemin de Sortie
+color_1: Couleur 1
+color_2: Couleur 2
+text: Texte
+font_size: Taille de Police
+text_position: Position du Texte
+hide_nintendo_logo: Masquer Logo Nintendo
+save_pattern: Sauvegarder le Motif
+select_output_folder: Sélectionner Dossier de Sortie
+generate_spine: Générer Spine
+font_path: Chemin de la Police
+font_path_tooltip: Vous pouvez sélectionner une police personnalisée, sinon NINTENDOSWITCHUI.TTF sera utilisée
+select_font: Sélectionner Police
+spine_created: ✓ Spine créé avec succès
+spine_error: ✗ Erreur
+
+# Paramètres
+folders_section: Dossiers
+input_folder: Dossier d'Entrée
+output_folder: Dossier de Sortie
+select_image_folder: Sélectionner Dossier d'Entrée
+select_output_folder: Sélectionner Dossier de Sortie
+spacing_section: Espacement
+side_margin: Marge Latérale
+spacing: Espacement
+margin_label: Marge
+
+# Paramètres Reddit
+reddit_settings: Paramètres API Reddit
+client_id: ID Client
+client_secret: Secret Client
+
+# Boutons et Messages
+save: Sauvegarder Paramètres
+settings_saved: Paramètres sauvegardés avec succès !
+invalid_number: Veuillez entrer des nombres valides pour la marge et l'espacement
+
+# Téléchargements
+download_spines: Télécharger Spines Switch
+cancel_download: Annuler
+download_complete: Téléchargement terminé !
+download_cancelled: Téléchargement annulé
+download_failed: Échec du téléchargement !
+download_success: Spines Switch téléchargés avec succès !
+starting_download: Démarrage du téléchargement...
+download_progress: "Traitement : {downloaded} téléchargés, {skipped} ignorés sur {total} spines totaux ({progress:.1f}%)"
+checking_credentials: Vérification des identifiants Reddit...
+credentials_ok: Identifiants OK, démarrage du téléchargement...
+missing_credentials: Identifiants Reddit manquants. Veuillez les configurer dans l'onglet Paramètres.
+invalid_credentials: Identifiants Reddit invalides. Veuillez vérifier votre ID Client et Secret dans l'onglet Paramètres.
+
+# Traitement
+image_folder_label: Dossier d'Images
+output_folder_label: Dossier de Sortie
+select_size_label: Sélectionner Taille
+select_paper_size_label: Sélectionner Taille du Papier
+open_output_check: Ouvrir le dossier de sortie à la fin
+process_button: Traiter les Images
+cancel_button: Annuler
+processing: Traitement
+creating: Création
+cancelled_message: Traitement annulé
+success_message: Traitement terminé avec succès
+error_image_folder: Le dossier d'images n'existe pas
+error_output_folder: Le dossier de sortie n'existe pas
+image_folder_tooltip: Sélectionner le dossier contenant les images à traiter
+output_folder_tooltip: Sélectionner le dossier où seront sauvegardées les images traitées
+available_extensions: " (Formats supportés : .jpg, .jpeg, .png, .webp)"
+
+# Tailles de Papier
+a4_size: A4 (210×297mm)
+letter_size: Lettre (216×279mm)
+legal_size: Legal (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: Taille Personnalisée
+
+# Mises à jour
+update_title: Mise à Jour Disponible
+update_available: "Une nouvelle version est disponible : {}\nVotre version actuelle est : {}\n\nVoulez-vous la télécharger ?"
+update_error: Erreur lors de la vérification des mises à jour
+update_check: Vérification des mises à jour...
+up_to_date: Le logiciel est à jour
+
+# Couleurs
+colors_settings: Couleurs
+change_color: Changer la Couleur Switch
+colors_settings_tooltip: Personnalisez les couleurs de l'en-tête du spine en hexadécimal comme souhaité. Si décoché, utilisera la couleur par défaut pour chaque plateforme
+
+# Divers
+select_folder: Sélectionner Dossier
+processing_images: Traitement des Images
+error_processing: Erreur lors du traitement des images
+no_images_found: Aucune image trouvée dans le dossier sélectionné
+select_output_pdf: Sélectionner le fichier PDF de sortie
+pdf_files: Fichiers PDF
+all_files: Tous les fichiers
+select_language: Sélectionner la langue
+logo_type: "Type de Logo (ci-dessous)"

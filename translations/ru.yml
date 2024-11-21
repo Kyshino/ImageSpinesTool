@@ -1,0 +1,109 @@
+# Вкладки
+spine_creator_tab: Создатель Spine
+settings_tab: Настройки
+image_processing_tab: Обработка Изображений
+support_me: Поддержать
+downloads_tab: Загрузки
+
+# Создатель Spine
+pattern_settings: Настройки Узора
+platform: Платформа
+pattern_type: Тип Узора
+output_path: Путь Вывода
+color_1: Цвет 1
+color_2: Цвет 2
+text: Текст
+font_size: Размер Шрифта
+text_position: Позиция Текста
+hide_nintendo_logo: Скрыть Логотип Nintendo
+save_pattern: Сохранить Узор
+select_output_folder: Выбрать Папку Вывода
+generate_spine: Создать Spine
+font_path: Путь к Шрифту
+font_path_tooltip: Вы можете выбрать пользовательский шрифт, иначе будет использован NINTENDOSWITCHUI.TTF
+select_font: Выбрать Шрифт
+spine_created: ✓ Spine успешно создан
+spine_error: ✗ Ошибка
+
+# Настройки
+folders_section: Папки
+input_folder: Входная Папка
+output_folder: Выходная Папка
+select_image_folder: Выбрать Входную Папку
+select_output_folder: Выбрать Выходную Папку
+spacing_section: Интервалы
+side_margin: Боковой Отступ
+spacing: Интервал
+margin_label: Отступ
+
+# Настройки Reddit
+reddit_settings: Настройки API Reddit
+client_id: ID Клиента
+client_secret: Секрет Клиента
+
+# Кнопки и Сообщения
+save: Сохранить Настройки
+settings_saved: Настройки успешно сохранены!
+invalid_number: Пожалуйста, введите корректные числа для отступа и интервала
+
+# Загрузки
+download_spines: Загрузить Spine для Switch
+cancel_download: Отмена
+download_complete: Загрузка завершена!
+download_cancelled: Загрузка отменена
+download_failed: Ошибка загрузки!
+download_success: Spine для Switch успешно загружены!
+starting_download: Начало загрузки...
+download_progress: "Обработка: загружено {downloaded}, пропущено {skipped} из {total} spine ({progress:.1f}%)"
+checking_credentials: Проверка учетных данных Reddit...
+credentials_ok: Учетные данные верны, начинаем загрузку...
+missing_credentials: Отсутствуют учетные данные Reddit. Настройте их во вкладке Настройки.
+invalid_credentials: Неверные учетные данные Reddit. Проверьте ID и Секрет клиента во вкладке Настройки.
+
+# Обработка
+image_folder_label: Папка с Изображениями
+output_folder_label: Папка Вывода
+select_size_label: Выбрать Размер
+select_paper_size_label: Выбрать Размер Бумаги
+open_output_check: Открыть папку вывода после завершения
+process_button: Обработать Изображения
+cancel_button: Отмена
+processing: Обработка
+creating: Создание
+cancelled_message: Обработка отменена
+success_message: Обработка успешно завершена
+error_image_folder: Папка с изображениями не существует
+error_output_folder: Папка вывода не существует
+image_folder_tooltip: Выберите папку с изображениями для обработки
+output_folder_tooltip: Выберите папку для сохранения обработанных изображений
+available_extensions: " (Поддерживаемые форматы: .jpg, .jpeg, .png, .webp)"
+
+# Размеры Бумаги
+a4_size: A4 (210×297мм)
+letter_size: Letter (216×279мм)
+legal_size: Legal (216×356мм)
+switch_size: Switch (171×222мм)
+custom_size: Пользовательский Размер
+
+# Обновления
+update_title: Доступно Обновление
+update_available: "Доступна новая версия: {}\nВаша текущая версия: {}\n\nХотите загрузить?"
+update_error: Ошибка проверки обновлений
+update_check: Проверка обновлений...
+up_to_date: Программа обновлена
+
+# Цвета
+colors_settings: Цвета
+change_color: Изменить Цвет Switch
+colors_settings_tooltip: Настройте цвета заголовка spine в шестнадцатеричном формате по желанию. Если не отмечено, будет использован цвет по умолчанию для каждой платформы
+
+# Разное
+select_folder: Выбрать Папку
+processing_images: Обработка Изображений
+error_processing: Ошибка обработки изображений
+no_images_found: В выбранной папке не найдено изображений
+select_output_pdf: Выберите выходной PDF файл
+pdf_files: PDF файлы
+all_files: Все файлы
+select_language: Выбрать язык
+logo_type: "Тип Логотипа (ниже)"

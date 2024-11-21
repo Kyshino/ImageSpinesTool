@@ -1,0 +1,108 @@
+select_language: Select language
+spine_creator_tab: Spine Creator
+settings_tab: Settings
+image_processing_tab: Image Processing
+support_me: Support me
+downloads_tab: Downloads
+
+# Spine Creator
+pattern_settings: Pattern Settings
+platform: Platform
+pattern_type: Pattern Type
+output_path: Output Path
+color_1: Color 1
+color_2: Color 2
+text: Text
+font_size: Font Size
+text_position: Text Position
+hide_nintendo_logo: Hide Nintendo Logo
+save_pattern: Save Pattern
+select_output_folder: Select Output Folder
+generate_spine: Generate Spine
+font_path: Font Path
+font_path_tooltip: You can select a custom font, otherwise NINTENDOSWITCHUI.TTF will be used by default
+select_font: Select Font
+spine_created: ✓ Spine created successfully
+spine_error: ✗ Error
+
+# Settings
+folders_section: Folders
+input_folder: Input Folder
+output_folder: Output Folder
+select_image_folder: Select Input Folder
+select_output_folder: Select Output Folder
+spacing_section: Spacing
+side_margin: Side Margin
+spacing: Spacing
+margin_label: Margin
+
+# Reddit Settings
+reddit_settings: Reddit API Settings
+client_id: Client ID
+client_secret: Client Secret
+
+# Buttons and Messages
+save: Save Settings
+settings_saved: Settings saved successfully!
+invalid_number: Please enter valid numbers for margin and spacing
+
+# Downloads
+download_spines: Download Switch Spines
+cancel_download: Cancel
+download_complete: Download complete!
+download_cancelled: Download cancelled
+download_failed: Download failed!
+download_success: Switch spines downloaded successfully!
+starting_download: Starting download...
+download_progress: "Processing: {downloaded} downloaded, {skipped} skipped out of {total} total spines ({progress:.1f}%)"
+checking_credentials: Checking Reddit credentials...
+credentials_ok: Credentials OK, starting download...
+missing_credentials: Missing Reddit credentials. Please configure them in Settings tab.
+invalid_credentials: Invalid Reddit credentials. Please check your Client ID and Secret in Settings tab.
+
+# Processing
+image_folder_label: Image Folder
+output_folder_label: Output Folder
+select_size_label: Select Size
+select_paper_size_label: Select Paper Size
+open_output_check: Open output folder when finished
+process_button: Process Images
+cancel_button: Cancel
+processing: Processing
+creating: Creating
+cancelled_message: Processing cancelled
+success_message: Processing completed successfully
+error_image_folder: Image folder does not exist
+error_output_folder: Output folder does not exist
+image_folder_tooltip: Select folder containing the images to process
+output_folder_tooltip: Select folder where processed images will be saved
+available_extensions: " (Supported formats: .jpg, .jpeg, .png, .webp)"
+
+# Paper Sizes
+a4_size: A4 (210×297mm)
+letter_size: Letter (216×279mm)
+legal_size: Legal (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: Custom Size
+
+# Updates
+update_title: Update Available
+update_available: "A new version is available: {}\nYour current version is: {}\n\nDo you want to download it?"
+update_error: Error checking for updates
+update_check: Checking for updates...
+up_to_date: Software is up to date
+
+# Colors
+colors_settings: Colors
+change_color: Change Switch Color
+colors_settings_tooltip: Customize the spine header colors in hexadecimal as desired. If unchecked, it will use the default color for each platform
+
+# Misc
+select_folder: Select Folder
+processing_images: Processing Images
+error_processing: Error processing images
+no_images_found: No images found in the selected folder
+select_output_pdf: Select output PDF file
+pdf_files: PDF files
+all_files: All files
+logo_type: "Logo Type (below)"

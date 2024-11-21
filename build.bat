@@ -13,8 +13,14 @@ echo    Building Image Spines Tool
 echo ===================================
 echo.
 
+:: Get full app name from version.py
+for /f "tokens=*" %%a in ('python -c "import version; print(version.FULL_APP_NAME)"') do set APP_NAME=%%a
+
+:: Prepare PyInstaller base command
+set PYINSTALLER_CMD=pyinstaller --onefile --windowed --noconsole --name "%APP_NAME%" --distpath .
+
 :: Set executable name
-set EXECUTABLE=ImagesSpinesTool.exe
+set EXECUTABLE=%APP_NAME%.exe
 
 :: Remove all __pycache__ folders recursively
 echo [INFO] Removing all __pycache__ folders...
@@ -28,9 +34,6 @@ call :RemoveFile ImagesSpinesTool.spec
 call :RemoveFolder build
 call :RemoveFolder dist
 
-:: Prepare PyInstaller base command
-set PYINSTALLER_CMD=pyinstaller --onefile --windowed --noconsole --name "ImagesSpinesTool" --distpath .
-
 :: Add icon if exists, but don't include it in the resources
 if exist "images/favicon.ico" (
     set PYINSTALLER_CMD=%PYINSTALLER_CMD% --icon="images/favicon.ico"
@@ -41,7 +44,16 @@ if exist "images/favicon.ico" (
 
 :: Create executable
 echo [INFO] Creating executable...
-%PYINSTALLER_CMD% --add-data "images;images" --add-data "translations;translations" main.py
+%PYINSTALLER_CMD% ^
+--add-data "images/*;images/" ^
+--add-data "images/logos/*;images/logos/" ^
+--add-data "translations/*;translations/" ^
+--add-data "templates/*;templates/" ^
+--add-data "utils/*;utils/" ^
+--add-data "spines_creators/*;spines_creators/" ^
+--add-data "tabs/*;tabs/" ^
+--add-data "components/*;components/" ^
+main.py
 
 :: Move executable to root directory and clean up
 if exist %EXECUTABLE% (
@@ -56,8 +68,7 @@ if exist %EXECUTABLE% (
     :: Clean up PyInstaller generated files
     echo [INFO] Cleaning temporary files...
     if exist build rmdir /s /q build
-    if exist dist rmdir /s /q dist
-    if exist ImagesSpinesTool.spec del ImagesSpinesTool.spec
+    if exist "%APP_NAME%.spec" del "%APP_NAME%.spec"
     
     :: Remove all __pycache__ folders after build
     echo [INFO] Final cleanup of __pycache__ folders...
@@ -65,9 +76,8 @@ if exist %EXECUTABLE% (
         echo [INFO] Removing %%d
         rmdir /s /q "%%d"
     )
-
-) else (
-    echo [ERROR] Failed to create executable.
+    
+    echo [SUCCESS] Build process completed successfully.
 )
 
 exit /b

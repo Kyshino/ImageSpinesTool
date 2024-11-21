@@ -1,0 +1,110 @@
+# 탭
+spine_creator_tab: Spine 생성기
+settings_tab: 설정
+image_processing_tab: 이미지 처리
+support_me: 후원하기
+downloads_tab: 다운로드
+
+# Spine 생성기
+pattern_settings: 패턴 설정
+platform: 플랫폼
+pattern_type: 패턴 유형
+output_path: 출력 경로
+color_1: 색상 1
+color_2: 색상 2
+text: 텍스트
+font_size: 글꼴 크기
+text_position: 텍스트 위치
+hide_nintendo_logo: 닌텐도 로고 숨기기
+save_pattern: 패턴 저장
+select_output_folder: 출력 폴더 선택
+generate_spine: Spine 생성
+font_path: 글꼴 경로
+font_path_tooltip: 사용자 정의 글꼴을 선택할 수 있으며, 선택하지 않으면 NINTENDOSWITCHUI.TTF가 사용됩니다
+select_font: 글꼴 선택
+spine_created: ✓ Spine이 성공적으로 생성되었습니다
+spine_error: ✗ 오류
+
+# 설정
+folders_section: 폴더
+input_folder: 입력 폴더
+output_folder: 출력 폴더
+select_image_folder: 입력 폴더 선택
+select_output_folder: 출력 폴더 선택
+spacing_section: 간격
+side_margin: 측면 여백
+spacing: 간격
+margin_label: 여백
+
+# Reddit 설정
+reddit_settings: Reddit API 설정
+client_id: 클라이언트 ID
+client_secret: 클라이언트 시크릿
+
+# 버튼 및 메시지
+save: 설정 저장
+settings_saved: 설정이 성공적으로 저장되었습니다!
+invalid_number: 여백과 간격에 유효한 숫자를 입력하세요
+
+# 다운로드
+download_spines: Switch Spine 다운로드
+cancel_download: 취소
+download_complete: 다운로드 완료!
+download_cancelled: 다운로드가 취소되었습니다
+download_failed: 다운로드 실패!
+download_success: Switch spine이 성공적으로 다운로드되었습니다!
+starting_download: 다운로드 시작 중...
+download_progress: "처리 중: {downloaded}개 다운로드됨, {skipped}개 건너뜀, 총 {total}개 spine ({progress:.1f}%)"
+checking_credentials: Reddit 자격 증명 확인 중...
+credentials_ok: 자격 증명 확인됨, 다운로드를 시작합니다...
+missing_credentials: Reddit 자격 증명이 없습니다. 설정 탭에서 구성하세요.
+invalid_credentials: 잘못된 Reddit 자격 증명입니다. 설정 탭에서 클라이언트 ID와 시크릿을 확인하세요.
+
+# 처리
+image_folder_label: 이미지 폴더
+output_folder_label: 출력 폴더
+select_size_label: 크기 선택
+select_paper_size_label: 용지 크기 선택
+open_output_check: 완료 시 출력 폴더 열기
+process_button: 이미지 처리
+cancel_button: 취소
+processing: 처리 중
+creating: 생성 중
+cancelled_message: 처리가 취소되었습니다
+success_message: 처리가 성공적으로 완료되었습니다
+error_image_folder: 이미지 폴더가 존재하지 않습니다
+error_output_folder: 출력 폴더가 존재하지 않습니다
+image_folder_tooltip: 처리할 이미지가 있는 폴더 선택
+output_folder_tooltip: 처리된 이미지를 저장할 폴더 선택
+available_extensions: " (지원 형식: .jpg, .jpeg, .png, .webp)"
+
+# 용지 크기
+a4_size: A4 (210×297mm)
+letter_size: Letter (216×279mm)
+legal_size: Legal (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: 사용자 정의 크기
+
+# 업데이트
+update_title: 업데이트 가능
+update_available: "새 버전이 있습니다: {}\n현재 버전: {}\n\n다운로드하시겠습니까?"
+update_error: 업데이트 확인 중 오류 발생
+update_check: 업데이트 확인 중...
+up_to_date: 소프트웨어가 최신 버전입니다
+
+# 색상
+colors_settings: 색상
+change_color: Switch 색상 변경
+colors_settings_tooltip: spine 헤더의 색상을 16진수로 원하는 대로 사용자 정의하세요. 체크 해제하면 각 플랫폼의 기본 색상이 사용됩니다
+
+# 기타
+select_folder: 폴더 선택
+processing_images: 이미지 처리 중
+error_processing: 이미지 처리 중 오류 발생
+no_images_found: 선택한 폴더에서 이미지를 찾을 수 없습니다
+select_output_pdf: 출력 PDF 파일 선택
+pdf_files: PDF 파일
+all_files: 모든 파일
+select_language: 언어 선택
+logo_type: "로고 유형 (아래)"
+  

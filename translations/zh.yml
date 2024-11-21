@@ -1,0 +1,109 @@
+# 标签页
+spine_creator_tab: Spine创建器
+settings_tab: 设置
+image_processing_tab: 图像处理
+support_me: 支持我
+downloads_tab: 下载
+
+# Spine创建器
+pattern_settings: 图案设置
+platform: 平台
+pattern_type: 图案类型
+output_path: 输出路径
+color_1: 颜色1
+color_2: 颜色2
+text: 文本
+font_size: 字体大小
+text_position: 文本位置
+hide_nintendo_logo: 隐藏任天堂标志
+save_pattern: 保存图案
+select_output_folder: 选择输出文件夹
+generate_spine: 生成Spine
+font_path: 字体路径
+font_path_tooltip: 您可以选择自定义字体，否则将使用NINTENDOSWITCHUI.TTF
+select_font: 选择字体
+spine_created: ✓ Spine创建成功
+spine_error: ✗ 错误
+
+# 设置
+folders_section: 文件夹
+input_folder: 输入文件夹
+output_folder: 输出文件夹
+select_image_folder: 选择输入文件夹
+select_output_folder: 选择输出文件夹
+spacing_section: 间距
+side_margin: 侧边距
+spacing: 间距
+margin_label: 边距
+
+# Reddit设置
+reddit_settings: Reddit API设置
+client_id: 客户端ID
+client_secret: 客户端密钥
+
+# 按钮和消息
+save: 保存设置
+settings_saved: 设置保存成功！
+invalid_number: 请为边距和间距输入有效数字
+
+# 下载
+download_spines: 下载Switch Spine
+cancel_download: 取消
+download_complete: 下载完成！
+download_cancelled: 下载已取消
+download_failed: 下载失败！
+download_success: Switch spine下载成功！
+starting_download: 开始下载...
+download_progress: "处理中：已下载{downloaded}个，跳过{skipped}个，共{total}个spine ({progress:.1f}%)"
+checking_credentials: 检查Reddit凭据...
+credentials_ok: 凭据正确，开始下载...
+missing_credentials: 缺少Reddit凭据。请在设置标签页中配置。
+invalid_credentials: Reddit凭据无效。请在设置标签页中检查您的客户端ID和密钥。
+
+# 处理
+image_folder_label: 图像文件夹
+output_folder_label: 输出文件夹
+select_size_label: 选择尺寸
+select_paper_size_label: 选择纸张尺寸
+open_output_check: 完成时打开输出文件夹
+process_button: 处理图像
+cancel_button: 取消
+processing: 处理中
+creating: 创建中
+cancelled_message: 处理已取消
+success_message: 处理成功完成
+error_image_folder: 图像文件夹不存在
+error_output_folder: 输出文件夹不存在
+image_folder_tooltip: 选择包含要处理图像的文件夹
+output_folder_tooltip: 选择处理后图像保存的文件夹
+available_extensions: " (支持的格式：.jpg, .jpeg, .png, .webp)"
+
+# 纸张尺寸
+a4_size: A4 (210×297mm)
+letter_size: Letter (216×279mm)
+legal_size: Legal (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: 自定义尺寸
+
+# 更新
+update_title: 有可用更新
+update_available: "有新版本可用：{}\n您当前的版本是：{}\n\n是否要下载？"
+update_error: 检查更新时出错
+update_check: 正在检查更新...
+up_to_date: 软件已是最新版本
+
+# 颜色
+colors_settings: 颜色
+change_color: 更改Switch颜色
+colors_settings_tooltip: 根据需要自定义spine标题的十六进制颜色。如果未选中，将使用每个平台的默认颜色
+
+# 其他
+select_folder: 选择文件夹
+processing_images: 处理图像
+error_processing: 处理图像时出错
+no_images_found: 所选文件夹中未找到图像
+select_output_pdf: 选择输出PDF文件
+pdf_files: PDF文件
+all_files: 所有文件
+select_language: 选择语言 
+logo_type: "标志类型 (下方)"

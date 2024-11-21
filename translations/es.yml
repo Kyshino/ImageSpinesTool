@@ -1,0 +1,109 @@
+# Pestañas
+spine_creator_tab: Creador de Spines
+settings_tab: Configuración
+image_processing_tab: Procesamiento de Imágenes
+support_me: Apóyame
+downloads_tab: Descargas
+
+# Creador de Spines
+pattern_settings: Configuración de Patrones
+platform: Plataforma
+pattern_type: Tipo de Patrón
+output_path: Ruta de Salida
+color_1: Color 1
+color_2: Color 2
+text: Texto
+font_size: Tamaño de Fuente
+text_position: Posición del Texto
+hide_nintendo_logo: Ocultar Logo de Nintendo
+save_pattern: Guardar Patrón
+select_output_folder: Seleccionar Carpeta de Salida
+generate_spine: Generar Spine
+font_path: Ruta de la Fuente
+font_path_tooltip: Puedes seleccionar una fuente personalizada, si no, se usará NINTENDOSWITCHUI.TTF por defecto
+select_font: Seleccionar Fuente
+spine_created: ✓ Spine creado correctamente
+spine_error: ✗ Error
+
+# Configuración
+folders_section: Carpetas
+input_folder: Carpeta de Entrada
+output_folder: Carpeta de Salida
+select_image_folder: Seleccionar Carpeta de Entrada
+select_output_folder: Seleccionar Carpeta de Salida
+spacing_section: Espaciado
+side_margin: Margen Lateral
+spacing: Espaciado
+margin_label: Margen
+
+# Configuración de Reddit
+reddit_settings: Configuración de la API de Reddit
+client_id: ID de Cliente
+client_secret: Secreto de Cliente
+
+# Botones y Mensajes
+save: Guardar Configuración
+settings_saved: ¡Configuración guardada correctamente!
+invalid_number: Por favor, introduce números válidos para el margen y el espaciado
+
+# Descargas
+download_spines: Descargar Spines de Switch
+cancel_download: Cancelar
+download_complete: ¡Descarga completa!
+download_cancelled: Descarga cancelada
+download_failed: ¡Error en la descarga!
+download_success: ¡Spines de Switch descargados correctamente!
+starting_download: Iniciando descarga...
+download_progress: "Procesando: {downloaded} descargados, {skipped} omitidos de {total} spines totales ({progress:.1f}%)"
+checking_credentials: Verificando credenciales de Reddit...
+credentials_ok: Credenciales correctas, iniciando descarga...
+missing_credentials: Faltan las credenciales de Reddit. Por favor, configúralas en la pestaña de Configuración.
+invalid_credentials: Credenciales de Reddit inválidas. Por favor, verifica tu ID de Cliente y Secreto en la pestaña de Configuración.
+
+# Procesamiento
+image_folder_label: Carpeta de Imágenes
+output_folder_label: Carpeta de Salida
+select_size_label: Seleccionar Tamaño
+select_paper_size_label: Seleccionar Tamaño de Papel
+open_output_check: Abrir carpeta de salida al terminar
+process_button: Procesar Imágenes
+cancel_button: Cancelar
+processing: Procesando
+creating: Creando
+cancelled_message: Procesamiento cancelado
+success_message: Procesamiento completado correctamente
+error_image_folder: La carpeta de imágenes no existe
+error_output_folder: La carpeta de salida no existe
+image_folder_tooltip: Seleccionar carpeta que contiene las imágenes a procesar
+output_folder_tooltip: Seleccionar carpeta donde se guardarán las imágenes procesadas
+available_extensions: " (Formatos soportados: .jpg, .jpeg, .png, .webp)"
+
+# Tamaños de Papel
+a4_size: A4 (210×297mm)
+letter_size: Carta (216×279mm)
+legal_size: Legal (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: Tamaño Personalizado
+
+# Actualizaciones
+update_title: Actualización Disponible
+update_available: "Hay una nueva versión disponible: {}\nTu versión actual es: {}\n\n¿Deseas descargarla?"
+update_error: Error al comprobar actualizaciones
+update_check: Comprobando actualizaciones...
+up_to_date: El software está actualizado
+
+# Colores
+colors_settings: Colores
+change_color: Cambiar Color de Switch
+colors_settings_tooltip: Personaliza los colores del encabezado del spine en hexadecimal como desees. Si está desmarcado, se usará el color predeterminado para cada plataforma
+
+# Misc
+select_folder: Seleccionar Carpeta
+processing_images: Procesando Imágenes
+error_processing: Error al procesar imágenes
+no_images_found: No se encontraron imágenes en la carpeta seleccionada
+select_output_pdf: Seleccionar archivo PDF de salida
+pdf_files: Archivos PDF
+all_files: Todos los archivos
+select_language: Seleccionar idioma
+logo_type: "Tipo de Logo (abajo)"

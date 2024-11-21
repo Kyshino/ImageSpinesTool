@@ -1,0 +1,109 @@
+# Schede
+spine_creator_tab: Creatore di Spine
+settings_tab: Impostazioni
+image_processing_tab: Elaborazione Immagini
+support_me: Supportami
+downloads_tab: Download
+
+# Creatore di Spine
+pattern_settings: Impostazioni Pattern
+platform: Piattaforma
+pattern_type: Tipo di Pattern
+output_path: Percorso di Output
+color_1: Colore 1
+color_2: Colore 2
+text: Testo
+font_size: Dimensione Font
+text_position: Posizione Testo
+hide_nintendo_logo: Nascondi Logo Nintendo
+save_pattern: Salva Pattern
+select_output_folder: Seleziona Cartella di Output
+generate_spine: Genera Spine
+font_path: Percorso Font
+font_path_tooltip: Puoi selezionare un font personalizzato, altrimenti verrà utilizzato NINTENDOSWITCHUI.TTF
+select_font: Seleziona Font
+spine_created: ✓ Spine creato con successo
+spine_error: ✗ Errore
+
+# Impostazioni
+folders_section: Cartelle
+input_folder: Cartella di Input
+output_folder: Cartella di Output
+select_image_folder: Seleziona Cartella di Input
+select_output_folder: Seleziona Cartella di Output
+spacing_section: Spaziatura
+side_margin: Margine Laterale
+spacing: Spaziatura
+margin_label: Margine
+
+# Impostazioni Reddit
+reddit_settings: Impostazioni API Reddit
+client_id: ID Cliente
+client_secret: Segreto Cliente
+
+# Pulsanti e Messaggi
+save: Salva Impostazioni
+settings_saved: Impostazioni salvate con successo!
+invalid_number: Inserisci numeri validi per margine e spaziatura
+
+# Download
+download_spines: Scarica Spine Switch
+cancel_download: Annulla
+download_complete: Download completato!
+download_cancelled: Download annullato
+download_failed: Download fallito!
+download_success: Spine Switch scaricati con successo!
+starting_download: Avvio download...
+download_progress: "Elaborazione: {downloaded} scaricati, {skipped} saltati su {total} spine totali ({progress:.1f}%)"
+checking_credentials: Verifica credenziali Reddit...
+credentials_ok: Credenziali OK, avvio download...
+missing_credentials: Credenziali Reddit mancanti. Configurale nella scheda Impostazioni.
+invalid_credentials: Credenziali Reddit non valide. Verifica ID Cliente e Segreto nella scheda Impostazioni.
+
+# Elaborazione
+image_folder_label: Cartella Immagini
+output_folder_label: Cartella Output
+select_size_label: Seleziona Dimensione
+select_paper_size_label: Seleziona Dimensione Carta
+open_output_check: Apri cartella output al termine
+process_button: Elabora Immagini
+cancel_button: Annulla
+processing: Elaborazione
+creating: Creazione
+cancelled_message: Elaborazione annullata
+success_message: Elaborazione completata con successo
+error_image_folder: La cartella immagini non esiste
+error_output_folder: La cartella output non esiste
+image_folder_tooltip: Seleziona la cartella contenente le immagini da elaborare
+output_folder_tooltip: Seleziona la cartella dove salvare le immagini elaborate
+available_extensions: " (Formati supportati: .jpg, .jpeg, .png, .webp)"
+
+# Dimensioni Carta
+a4_size: A4 (210×297mm)
+letter_size: Letter (216×279mm)
+legal_size: Legal (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: Dimensione Personalizzata
+
+# Aggiornamenti
+update_title: Aggiornamento Disponibile
+update_available: "È disponibile una nuova versione: {}\nLa tua versione attuale è: {}\n\nVuoi scaricarla?"
+update_error: Errore durante il controllo aggiornamenti
+update_check: Controllo aggiornamenti...
+up_to_date: Il software è aggiornato
+
+# Colori
+colors_settings: Colori
+change_color: Cambia Colore Switch
+colors_settings_tooltip: Personalizza i colori dell'intestazione spine in esadecimale come desideri. Se deselezionato, verrà utilizzato il colore predefinito per ogni piattaforma
+
+# Varie
+select_folder: Seleziona Cartella
+processing_images: Elaborazione Immagini
+error_processing: Errore durante l'elaborazione delle immagini
+no_images_found: Nessuna immagine trovata nella cartella selezionata
+select_output_pdf: Seleziona file PDF di output
+pdf_files: File PDF
+all_files: Tutti i file
+select_language: Seleziona lingua
+logo_type: "Tipo di Logo (sotto)"

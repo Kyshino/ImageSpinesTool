@@ -1,0 +1,109 @@
+# Tabs
+spine_creator_tab: Spine-Editor
+settings_tab: Einstellungen
+image_processing_tab: Bildverarbeitung
+support_me: Unterstütze mich
+downloads_tab: Downloads
+
+# Spine Creator
+pattern_settings: Muster-Einstellungen
+platform: Plattform
+pattern_type: Mustertyp
+output_path: Ausgabepfad
+color_1: Farbe 1
+color_2: Farbe 2
+text: Text
+font_size: Schriftgröße
+text_position: Textposition
+hide_nintendo_logo: Nintendo-Logo ausblenden
+save_pattern: Muster speichern
+select_output_folder: Ausgabeordner auswählen
+generate_spine: Spine generieren
+font_path: Schriftartpfad
+font_path_tooltip: Sie können eine benutzerdefinierte Schriftart auswählen, andernfalls wird NINTENDOSWITCHUI.TTF verwendet
+select_font: Schriftart auswählen
+spine_created: ✓ Spine erfolgreich erstellt
+spine_error: ✗ Fehler
+
+# Einstellungen
+folders_section: Ordner
+input_folder: Eingabeordner
+output_folder: Ausgabeordner
+select_image_folder: Eingabeordner auswählen
+select_output_folder: Ausgabeordner auswählen
+spacing_section: Abstände
+side_margin: Seitenrand
+spacing: Abstand
+margin_label: Rand
+
+# Reddit-Einstellungen
+reddit_settings: Reddit API-Einstellungen
+client_id: Client-ID
+client_secret: Client-Secret
+
+# Buttons und Meldungen
+save: Einstellungen speichern
+settings_saved: Einstellungen erfolgreich gespeichert!
+invalid_number: Bitte geben Sie gültige Zahlen für Rand und Abstand ein
+
+# Downloads
+download_spines: Switch-Spines herunterladen
+cancel_download: Abbrechen
+download_complete: Download abgeschlossen!
+download_cancelled: Download abgebrochen
+download_failed: Download fehlgeschlagen!
+download_success: Switch-Spines erfolgreich heruntergeladen!
+starting_download: Download wird gestartet...
+download_progress: "Verarbeitung: {downloaded} heruntergeladen, {skipped} übersprungen von {total} Spines gesamt ({progress:.1f}%)"
+checking_credentials: Reddit-Anmeldedaten werden überprüft...
+credentials_ok: Anmeldedaten OK, Download wird gestartet...
+missing_credentials: Reddit-Anmeldedaten fehlen. Bitte konfigurieren Sie sie im Einstellungen-Tab.
+invalid_credentials: Ungültige Reddit-Anmeldedaten. Bitte überprüfen Sie Ihre Client-ID und Secret im Einstellungen-Tab.
+
+# Verarbeitung
+image_folder_label: Bilderordner
+output_folder_label: Ausgabeordner
+select_size_label: Größe auswählen
+select_paper_size_label: Papiergröße auswählen
+open_output_check: Ausgabeordner nach Fertigstellung öffnen
+process_button: Bilder verarbeiten
+cancel_button: Abbrechen
+processing: Verarbeitung
+creating: Erstellen
+cancelled_message: Verarbeitung abgebrochen
+success_message: Verarbeitung erfolgreich abgeschlossen
+error_image_folder: Bilderordner existiert nicht
+error_output_folder: Ausgabeordner existiert nicht
+image_folder_tooltip: Ordner mit zu verarbeitenden Bildern auswählen
+output_folder_tooltip: Ordner auswählen, in dem verarbeitete Bilder gespeichert werden
+available_extensions: " (Unterstützte Formate: .jpg, .jpeg, .png, .webp)"
+
+# Papiergrößen
+a4_size: A4 (210×297mm)
+letter_size: Letter (216×279mm)
+legal_size: Legal (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: Benutzerdefinierte Größe
+
+# Updates
+update_title: Update verfügbar
+update_available: "Eine neue Version ist verfügbar: {}\nIhre aktuelle Version ist: {}\n\nMöchten Sie sie herunterladen?"
+update_error: Fehler beim Prüfen auf Updates
+update_check: Prüfe auf Updates...
+up_to_date: Software ist aktuell
+
+# Farben
+colors_settings: Farben
+change_color: Switch-Farbe ändern
+colors_settings_tooltip: Passen Sie die Spine-Header-Farben in Hexadezimal nach Wunsch an. Wenn deaktiviert, wird die Standardfarbe für jede Plattform verwendet
+
+# Sonstiges
+select_folder: Ordner auswählen
+processing_images: Bilder werden verarbeitet
+error_processing: Fehler bei der Bildverarbeitung
+no_images_found: Keine Bilder im ausgewählten Ordner gefunden
+select_output_pdf: PDF-Ausgabedatei auswählen
+pdf_files: PDF-Dateien
+all_files: Alle Dateien
+select_language: Sprache auswählen
+logo_type: "Logo-Typ (unten)"

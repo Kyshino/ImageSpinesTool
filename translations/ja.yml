@@ -1,0 +1,110 @@
+# タブ
+spine_creator_tab: Spineクリエーター
+settings_tab: 設定
+image_processing_tab: 画像処理
+support_me: 支援する
+downloads_tab: ダウンロード
+
+# Spineクリエーター
+pattern_settings: パターン設定
+platform: プラットフォーム
+pattern_type: パターンタイプ
+output_path: 出力パス
+color_1: カラー1
+color_2: カラー2
+text: テキスト
+font_size: フォントサイズ
+text_position: テキスト位置
+hide_nintendo_logo: 任天堂ロゴを隠す
+save_pattern: パターンを保存
+select_output_folder: 出力フォルダを選択
+generate_spine: Spineを生成
+font_path: フォントパス
+font_path_tooltip: カスタムフォントを選択できます。選択しない場合はNINTENDOSWITCHUI.TTFが使用されます
+select_font: フォント選択
+spine_created: ✓ Spineが正常に作成されました
+spine_error: ✗ エラー
+
+# 設定
+folders_section: フォルダ
+input_folder: 入力フォルダ
+output_folder: 出力フォルダ
+select_image_folder: 入力フォルダを選択
+select_output_folder: 出力フォルダを選択
+spacing_section: 間隔
+side_margin: サイドマージン
+spacing: 間隔
+margin_label: マージン
+
+# Reddit設定
+reddit_settings: Reddit API設定
+client_id: クライアントID
+client_secret: クライアントシークレット
+
+# ボタンとメッセージ
+save: 設定を保存
+settings_saved: 設定が正常に保存されました！
+invalid_number: マージンと間隔に有効な数値を入力してください
+
+# ダウンロード
+download_spines: Switch Spineをダウンロード
+cancel_download: キャンセル
+download_complete: ダウンロード完了！
+download_cancelled: ダウンロードがキャンセルされました
+download_failed: ダウンロード失敗！
+download_success: Switch Spineが正常にダウンロードされました！
+starting_download: ダウンロードを開始中...
+download_progress: "処理中：{downloaded}ダウンロード済み、{skipped}スキップ、合計{total}spine ({progress:.1f}%)"
+checking_credentials: Redditの認証情報を確認中...
+credentials_ok: 認証情報OK、ダウンロードを開始します...
+missing_credentials: Redditの認証情報が不足しています。設定タブで設定してください。
+invalid_credentials: Redditの認証情報が無効です。設定タブでクライアントIDとシークレットを確認してください。
+
+# 処理
+image_folder_label: 画像フォルダ
+output_folder_label: 出力フォルダ
+select_size_label: サイズ選択
+select_paper_size_label: 用紙サイズ選択
+open_output_check: 完了時に出力フォルダを開く
+process_button: 画像を処理
+cancel_button: キャンセル
+processing: 処理中
+creating: 作成中
+cancelled_message: 処理がキャンセルされました
+success_message: 処理が正常に完了しました
+error_image_folder: 画像フォルダが存在しません
+error_output_folder: 出力フォルダが存在しません
+image_folder_tooltip: 処理する画像を含むフォルダを選択
+output_folder_tooltip: 処理済み画像を保存するフォルダを選択
+available_extensions: " (対応フォーマット：.jpg, .jpeg, .png, .webp)"
+
+# 用紙サイズ
+a4_size: A4 (210×297mm)
+letter_size: レター (216×279mm)
+legal_size: リーガル (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: カスタムサイズ
+
+# アップデート
+update_title: アップデート可能
+update_available: "新しいバージョンが利用可能です：{}\n現在のバージョン：{}\n\nダウンロードしますか？"
+update_error: アップデートの確認中にエラーが発生しました
+update_check: アップデートを確認中...
+up_to_date: ソフトウェアは最新です
+
+# カラー
+colors_settings: カラー
+change_color: Switchカラーを変更
+colors_settings_tooltip: Spineヘッダーの色を16進数で自由にカスタマイズできます。チェックを外すと、各プラットフォームのデフォルトカラーが使用されます
+
+# その他
+select_folder: フォルダを選択
+processing_images: 画像処理中
+error_processing: 画像処理中にエラーが発生しました
+no_images_found: 選択したフォルダに画像が見つかりません
+select_output_pdf: 出力PDFファイルを選択
+pdf_files: PDFファイル
+all_files: すべてのファイル
+select_language: 言語を選択
+logo_type: "ロゴタイプ (下)"
+  

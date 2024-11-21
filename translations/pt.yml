@@ -1,0 +1,109 @@
+# Abas
+spine_creator_tab: Criador de Spine
+settings_tab: Configurações
+image_processing_tab: Processamento de Imagens
+support_me: Me Apoie
+downloads_tab: Downloads
+
+# Criador de Spine
+pattern_settings: Configurações de Padrão
+platform: Plataforma
+pattern_type: Tipo de Padrão
+output_path: Caminho de Saída
+color_1: Cor 1
+color_2: Cor 2
+text: Texto
+font_size: Tamanho da Fonte
+text_position: Posição do Texto
+hide_nintendo_logo: Ocultar Logo Nintendo
+save_pattern: Salvar Padrão
+select_output_folder: Selecionar Pasta de Saída
+generate_spine: Gerar Spine
+font_path: Caminho da Fonte
+font_path_tooltip: Você pode selecionar uma fonte personalizada, caso contrário, NINTENDOSWITCHUI.TTF será usado
+select_font: Selecionar Fonte
+spine_created: ✓ Spine criado com sucesso
+spine_error: ✗ Erro
+
+# Configurações
+folders_section: Pastas
+input_folder: Pasta de Entrada
+output_folder: Pasta de Saída
+select_image_folder: Selecionar Pasta de Entrada
+select_output_folder: Selecionar Pasta de Saída
+spacing_section: Espaçamento
+side_margin: Margem Lateral
+spacing: Espaçamento
+margin_label: Margem
+
+# Configurações do Reddit
+reddit_settings: Configurações da API do Reddit
+client_id: ID do Cliente
+client_secret: Chave Secreta
+
+# Botões e Mensagens
+save: Salvar Configurações
+settings_saved: Configurações salvas com sucesso!
+invalid_number: Por favor, insira números válidos para margem e espaçamento
+
+# Downloads
+download_spines: Baixar Spines do Switch
+cancel_download: Cancelar
+download_complete: Download completo!
+download_cancelled: Download cancelado
+download_failed: Falha no download!
+download_success: Spines do Switch baixados com sucesso!
+starting_download: Iniciando download...
+download_progress: "Processando: {downloaded} baixados, {skipped} ignorados de {total} spines totais ({progress:.1f}%)"
+checking_credentials: Verificando credenciais do Reddit...
+credentials_ok: Credenciais OK, iniciando download...
+missing_credentials: Credenciais do Reddit ausentes. Configure-as na aba de Configurações.
+invalid_credentials: Credenciais do Reddit inválidas. Verifique seu ID do Cliente e Chave Secreta na aba de Configurações.
+
+# Processamento
+image_folder_label: Pasta de Imagens
+output_folder_label: Pasta de Saída
+select_size_label: Selecionar Tamanho
+select_paper_size_label: Selecionar Tamanho do Papel
+open_output_check: Abrir pasta de saída ao finalizar
+process_button: Processar Imagens
+cancel_button: Cancelar
+processing: Processando
+creating: Criando
+cancelled_message: Processamento cancelado
+success_message: Processamento concluído com sucesso
+error_image_folder: A pasta de imagens não existe
+error_output_folder: A pasta de saída não existe
+image_folder_tooltip: Selecione a pasta contendo as imagens para processar
+output_folder_tooltip: Selecione a pasta onde as imagens processadas serão salvas
+available_extensions: " (Formatos suportados: .jpg, .jpeg, .png, .webp)"
+
+# Tamanhos de Papel
+a4_size: A4 (210×297mm)
+letter_size: Carta (216×279mm)
+legal_size: Ofício (216×356mm)
+switch_size: Switch (171×222mm)
+custom_size: Tamanho Personalizado
+
+# Atualizações
+update_title: Atualização Disponível
+update_available: "Uma nova versão está disponível: {}\nSua versão atual é: {}\n\nDeseja baixá-la?"
+update_error: Erro ao verificar atualizações
+update_check: Verificando atualizações...
+up_to_date: Software está atualizado
+
+# Cores
+colors_settings: Cores
+change_color: Alterar Cor do Switch
+colors_settings_tooltip: Personalize as cores do cabeçalho do spine em hexadecimal como desejar. Se desmarcado, usará a cor padrão para cada plataforma
+
+# Diversos
+select_folder: Selecionar Pasta
+processing_images: Processando Imagens
+error_processing: Erro ao processar imagens
+no_images_found: Nenhuma imagem encontrada na pasta selecionada
+select_output_pdf: Selecionar arquivo PDF de saída
+pdf_files: Arquivos PDF
+all_files: Todos os arquivos
+select_language: Selecionar idioma
+logo_type: "Tipo de Logo (abaixo)"

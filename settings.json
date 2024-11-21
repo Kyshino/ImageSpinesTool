@@ -1,3 +1,10 @@
 {
-
+    "side_margin": 60,
+    "spacing": 1,
+    "image_folder": "C:\\Users\\KyshinoDesktop\\Desktop\\Nueva carpeta",
+    "output_folder": "C:\\Users\\KyshinoDesktop\\Desktop\\Nueva carpeta\\Output",
+    "reddit_client_id": "",
+    "reddit_client_secret": "",
+    "switch_color_enabled": true,
+    "switch_color": "#DA1820"
 }

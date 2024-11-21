@@ -1,3 +1,4 @@
+import os
 language_map = {
     "English": "en",
     "Español": "es",
@@ -32,3 +33,17 @@ image_folder = r"C:\Users\Spines\Desktop\SpinesImages"
 output_folder = r"C:\Users\Spines\Desktop\SpinesImages\Output"
 reddit_client_id = ""
 reddit_client_secret = ""
+
+switch_color = '#DA1820'
+
+colors = {
+    'switch_color': switch_color,  # Color rojo por defecto
+    'blue': '#0066CC',  # El azul que usamos antes
+    # Puedes añadir más colores aquí
+} 
+
+switch_color_enabled = False
+
+TEMPLATES = {
+    "switch": os.path.join(os.path.dirname(__file__), "templates", "switch_spine_template.png")
+}

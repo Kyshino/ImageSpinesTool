@@ -1,12 +1,16 @@
 import json
 import os
 import sys
-from variables import side_margin as default_side_margin
-from variables import spacing as default_spacing
-from variables import image_folder as default_image_folder
-from variables import output_folder as default_output_folder
-from variables import reddit_client_id as default_reddit_client_id
-from variables import reddit_client_secret as default_reddit_client_secret
+from variables import (
+    side_margin as default_side_margin,
+    spacing as default_spacing,
+    image_folder as default_image_folder,
+    output_folder as default_output_folder,
+    reddit_client_id as default_reddit_client_id,
+    reddit_client_secret as default_reddit_client_secret,
+    switch_color as default_switch_color,
+    switch_color_enabled as default_switch_color_enabled
+)
 
 def get_executable_path():
     """Get the path of the executable or script"""
@@ -112,4 +116,26 @@ def get_reddit_client_secret():
 def set_reddit_client_secret(value):
     config = load_config()
     config['reddit_client_secret'] = value
-    return save_config(config) 
+    return save_config(config)
+
+def get_switch_color():
+    """Obtiene el color personalizado del switch"""
+    config = load_config()
+    return config.get('switch_color', '#000000')
+
+def set_switch_color(color):
+    """Establece el color personalizado del switch"""
+    config = load_config()
+    config['switch_color'] = color
+    save_config(config)
+
+def get_switch_color_enabled():
+    """Obtiene si el color personalizado del switch está habilitado"""
+    config = load_config()
+    return config.get('switch_color_enabled', False)
+
+def set_switch_color_enabled(enabled):
+    """Establece si el color personalizado del switch está habilitado"""
+    config = load_config()
+    config['switch_color_enabled'] = enabled
+    save_config(config) 
