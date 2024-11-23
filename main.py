@@ -7,8 +7,7 @@ from tabs.spine_creator_tab import SpineCreatorTab
 from translations import translations, get_text
 from variables import language_map
 from version import VERSION, FULL_APP_NAME
-from utils.utils import (open_support_link, open_kofi_link)
-#check_for_updates
+from utils.utils import (open_support_link, open_kofi_link, check_for_updates)
 
 class MainApplication:
     def __init__(self):
@@ -21,7 +20,7 @@ class MainApplication:
         self.setup_language_frame()
         self.setup_notebook()
         self.add_signature()
-        #check_for_updates(self.current_language)
+        check_for_updates(self.current_language)
         
     def setup_window(self):
         self.root.title(FULL_APP_NAME)
