@@ -20,7 +20,7 @@ save_pattern: Salva Pattern
 select_output_folder: Seleziona Cartella di Output
 generate_spine: Genera Spine
 font_path: Percorso Font
-font_path_tooltip: Puoi selezionare un font personalizzato, altrimenti verrà utilizzato NINTENDOSWITCHUI.TTF
+font_path_tooltip: Puoi selezionare un font personalizzato, altrimenti verrà utilizzato AvenirLTStd-Black.otf
 select_font: Seleziona Font
 spine_created: ✓ Spine creato con successo
 spine_error: ✗ Errore

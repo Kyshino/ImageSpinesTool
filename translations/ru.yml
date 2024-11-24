@@ -20,7 +20,7 @@ save_pattern: Сохранить Узор
 select_output_folder: Выбрать Папку Вывода
 generate_spine: Создать Spine
 font_path: Путь к Шрифту
-font_path_tooltip: Вы можете выбрать пользовательский шрифт, иначе будет использован NINTENDOSWITCHUI.TTF
+font_path_tooltip: Вы можете выбрать пользовательский шрифт, иначе будет использован AvenirLTStd-Black.otf
 select_font: Выбрать Шрифт
 spine_created: ✓ Spine успешно создан
 spine_error: ✗ Ошибка

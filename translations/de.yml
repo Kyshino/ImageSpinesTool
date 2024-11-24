@@ -20,7 +20,7 @@ save_pattern: Muster speichern
 select_output_folder: Ausgabeordner auswählen
 generate_spine: Spine generieren
 font_path: Schriftartpfad
-font_path_tooltip: Sie können eine benutzerdefinierte Schriftart auswählen, andernfalls wird NINTENDOSWITCHUI.TTF verwendet
+font_path_tooltip: Sie können eine benutzerdefinierte Schriftart auswählen, andernfalls wird AvenirLTStd-Black.otf verwendet
 select_font: Schriftart auswählen
 spine_created: ✓ Spine erfolgreich erstellt
 spine_error: ✗ Fehler

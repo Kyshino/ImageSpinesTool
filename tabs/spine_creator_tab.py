@@ -21,14 +21,14 @@ class SpineCreatorTab(Frame):
     def setup_variables(self):
         # Variables para los selects
         self.platform = StringVar(value="Switch")
-        self.pattern = StringVar(value="Vertical")
+        self.pattern = StringVar(value="Plain")
         self.output_path = StringVar(value=str(get_output_folder()))
         self.text = StringVar()
-        self.font_size = StringVar(value="80        ")
+        self.font_size = StringVar(value="80")
         self.text_position = StringVar(value="Middle")
         
         # Variables para los colores
-        self.color1_var = StringVar(value="#282828")
+        self.color1_var = StringVar(value="#da1820")
         self.color2_var = StringVar(value="#1E1E1E")
         
         # Variable para la fuente
@@ -85,6 +85,9 @@ class SpineCreatorTab(Frame):
         self.color2_entry = ttk.Entry(colors_frame, textvariable=self.color2_var, width=10)
         self.color2_entry.pack(side='left', padx=(0,5))
         self.color2_button, self.color2_frame = self.create_color_button(colors_frame, self.color2_var)
+        self.color2_entry.config(state='disabled')
+        self.color2_button.unbind('<Button-1>')
+        self.color2_button.configure(cursor='', bg='gray')
 
         # Text
         self.text_label = ttk.Label(main_frame, text=translations[self.current_language]['text'])
@@ -133,7 +136,7 @@ class SpineCreatorTab(Frame):
         self.logo_label.grid(row=10, column=0, padx=5, pady=5, sticky='w')
         
         logo_select = ttk.Combobox(main_frame, textvariable=self.logo_type, state='readonly', width=35)
-        logo_values = ('Without Logo', 'Nintendo', 'Sega', 'Microids', 'NIS', 'ATLUS', 'Devolver', 'Limited Run')
+        logo_values = ('Without Logo', 'ATLUS', 'Bandai Namco', 'Capcom', 'Devolver', 'Konami', 'Limited Run', 'Microids', 'NIS', 'Nintendo', 'Sega', 'Square Enix')
         logo_select['values'] = logo_values
         logo_select.grid(row=10, column=1, padx=5, pady=5, sticky='w')
 

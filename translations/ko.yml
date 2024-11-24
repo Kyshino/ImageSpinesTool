@@ -20,7 +20,7 @@ save_pattern: 패턴 저장
 select_output_folder: 출력 폴더 선택
 generate_spine: Spine 생성
 font_path: 글꼴 경로
-font_path_tooltip: 사용자 정의 글꼴을 선택할 수 있으며, 선택하지 않으면 NINTENDOSWITCHUI.TTF가 사용됩니다
+font_path_tooltip: 사용자 정의 글꼴을 선택할 수 있으며, 선택하지 않으면 AvenirLTStd-Black.otf가 사용됩니다
 select_font: 글꼴 선택
 spine_created: ✓ Spine이 성공적으로 생성되었습니다
 spine_error: ✗ 오류

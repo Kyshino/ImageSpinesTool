@@ -20,7 +20,7 @@ save_pattern: 保存图案
 select_output_folder: 选择输出文件夹
 generate_spine: 生成Spine
 font_path: 字体路径
-font_path_tooltip: 您可以选择自定义字体，否则将使用NINTENDOSWITCHUI.TTF
+font_path_tooltip: 您可以选择自定义字体，否则将使用AvenirLTStd-Black.otf
 select_font: 选择字体
 spine_created: ✓ Spine创建成功
 spine_error: ✗ 错误

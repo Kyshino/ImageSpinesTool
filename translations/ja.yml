@@ -20,7 +20,7 @@ save_pattern: パターンを保存
 select_output_folder: 出力フォルダを選択
 generate_spine: Spineを生成
 font_path: フォントパス
-font_path_tooltip: カスタムフォントを選択できます。選択しない場合はNINTENDOSWITCHUI.TTFが使用されます
+font_path_tooltip: カスタムフォントを選択できます。選択しない場合はAvenirLTStd-Black.otfが使用されます
 select_font: フォント選択
 spine_created: ✓ Spineが正常に作成されました
 spine_error: ✗ エラー

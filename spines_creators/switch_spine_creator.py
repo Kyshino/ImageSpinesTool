@@ -18,8 +18,22 @@ class SpineCreator:
         else:
             self.base_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-        self.default_font_path = os.path.join(self.base_path, 'fonts', 'NINTENDOSWITCHUI.TTF')
+        self.default_font_path = os.path.join(self.base_path, 'fonts', 'HelveticaNeueHeavy.otf')
 
+        logo_handlers = {
+            'Without Logo': self.apply_no_logo,
+            'Nintendo': self.keep_nintendo_logo,
+            'Sega': self.apply_sega_logo,
+            'Microids': self.apply_microids_logo,
+            'NIS': self.apply_nis_logo,
+            'ATLUS': self.apply_atlus_logo,
+            'Devolver': self.apply_devolver_logo,
+            'Limited Run': self.apply_limited_run_logo,
+            'Capcom': self.apply_capcom_logo,
+            'Square Enix': self.apply_square_enix_logo,
+            'Bandai Namco': self.apply_bandai_namco_logo,
+            'Konami': self.apply_konami_logo
+        }
 
     def create_vertical_background(self, width, height, stripe_width=10, hex_colors=["#282828", "#1E1E1E"]):
         colors = [hex_to_rgba(color) for color in hex_colors]
@@ -123,7 +137,11 @@ class SpineCreator:
             'NIS': self.apply_nis_logo,
             'ATLUS': self.apply_atlus_logo,
             'Devolver': self.apply_devolver_logo,
-            'Limited Run': self.apply_limited_run_logo
+            'Limited Run': self.apply_limited_run_logo,
+            'Capcom': self.apply_capcom_logo,
+            'Square Enix': self.apply_square_enix_logo,
+            'Bandai Namco': self.apply_bandai_namco_logo,
+            'Konami': self.apply_konami_logo
         }
         
         handler = logo_handlers.get(logo_type, self.keep_nintendo_logo)
@@ -150,9 +168,13 @@ class SpineCreator:
             if rotate:
                 logo = logo.rotate(-90, expand=True)
             
+            # Aplicamos primero la capa negra para todos los casos
             img = self.apply_black_layer(img)
             
-            if logo_name == 'limited_run_logo':
+            # Luego aplicamos el logo correspondiente
+            if logo_name == 'square_enix_logo':
+                img = self.resize_square_enix_logo(img, logo, width, height)
+            elif logo_name == 'limited_run_logo':
                 img = self.resize_limited_run_logo(img, logo, width, height)
             elif logo_name == 'atlus_logo':
                 img = self.resize_atlus_logo(img, logo, width, height)
@@ -160,6 +182,12 @@ class SpineCreator:
                 img = self.resize_devolver_logo(img, logo, width, height)
             elif logo_name == 'microids_logo':
                 img = self.resize_microids_logo(img, logo, width, height)
+            elif logo_name == 'bandai_namco_logo':
+                img = self.resize_bandai_namco_logo(img, logo, width, height)
+            elif logo_name == 'konami_logo':
+                img = self.resize_konami_logo(img, logo, width, height)
+            elif logo_name == 'capcom_logo':
+                img = self.resize_capcom_logo(img, logo, width, height)   
             else:
                 img = self.resize_default_logo(img, logo, width, height)
             
@@ -252,6 +280,82 @@ class SpineCreator:
     def apply_limited_run_logo(self, img):
         """Applies Limited Run logo without rotation"""
         return self.apply_custom_logo(img, 'limited_run_logo', rotate=False)
+
+    def apply_capcom_logo(self, img):
+        """Aplica el logo de Capcom con rotación"""
+        return self.apply_custom_logo(img, 'capcom_logo', rotate=True)
+
+    def resize_capcom_logo(self, img, logo, width, height):
+        """Redimensiona y coloca el logo de Capcom"""
+        logo_height = int(height * 0.1)  # Reducido de 0.025 a 0.018
+        aspect_ratio = logo.width / logo.height
+        logo_width = int(logo_height * aspect_ratio * 1.2)
+        
+        logo = logo.resize((logo_width, logo_height), Image.Resampling.LANCZOS)
+        x = (width - logo.width) // 2
+        y = height - logo.height - int(height * 0.03)
+        img.paste(logo, (x, y), logo)
+        return img
+
+    def apply_square_enix_logo(self, img):
+        """Aplica el logo de Square Enix con rotación"""
+        return self.apply_custom_logo(img, 'square_enix_logo', rotate=True)
+
+    def resize_square_enix_logo(self, img, logo, width, height):
+        """Redimensiona y coloca el logo de Square Enix"""
+        logo_height = int(height * 0.10)
+        aspect_ratio = logo.width / logo.height
+        logo_width = int(logo_height * aspect_ratio * 1.5)
+        
+        # Convertir los píxeles negros y rojos a blancos
+        logo = logo.convert('RGBA')
+        logo_data = logo.getdata()
+        new_data = []
+        for pixel in logo_data:
+            r, g, b, a = pixel
+            if (r <= 30 and g <= 30 and b <= 30) or (r > g + 50 and r > b + 50):
+                new_data.append((255, 255, 255, a))
+            else:
+                new_data.append(pixel)
+        
+        logo.putdata(new_data)
+        logo = logo.resize((logo_width, logo_height), Image.Resampling.LANCZOS)
+        x = (width - logo.width) // 2
+        y = height - logo.height - int(height * 0.02)
+        img.paste(logo, (x, y), logo)
+        return img
+
+    def apply_bandai_namco_logo(self, img):
+        """Aplica el logo de Bandai Namco sin rotación"""
+        return self.apply_custom_logo(img, 'bandai_namco_logo', rotate=False)
+
+    def resize_bandai_namco_logo(self, img, logo, width, height):
+        """Redimensiona y coloca el logo de Bandai Namco un poco más grande que Limited Run"""
+        logo_width = int(width * 0.9)  # Aumentado de 0.8 a 0.9 (10% más ancho)
+        aspect_ratio = logo.height / logo.width
+        logo_height = int(logo_width * aspect_ratio)
+        
+        logo = logo.resize((logo_width, logo_height), Image.Resampling.LANCZOS)
+        x = (width - logo.width) // 2
+        y = height - logo.height - int(height * 0.03)
+        img.paste(logo, (x, y), logo)
+        return img
+
+    def apply_konami_logo(self, img):
+        """Aplica el logo de Konami con rotación"""
+        return self.apply_custom_logo(img, 'konami_logo', rotate=True)
+
+    def resize_konami_logo(self, img, logo, width, height):
+        """Redimensiona y coloca el logo de Konami"""
+        logo_height = int(height * 0.09)
+        aspect_ratio = logo.width / logo.height
+        logo_width = int(logo_height * aspect_ratio * 1.2)
+        
+        logo = logo.resize((logo_width, logo_height), Image.Resampling.LANCZOS)
+        x = (width - logo.width) // 2
+        y = height - logo.height - int(height * 0.03)
+        img.paste(logo, (x, y), logo)
+        return img
 
     def process_image(
             self,

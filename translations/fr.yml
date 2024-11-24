@@ -20,7 +20,7 @@ save_pattern: Sauvegarder le Motif
 select_output_folder: Sélectionner Dossier de Sortie
 generate_spine: Générer Spine
 font_path: Chemin de la Police
-font_path_tooltip: Vous pouvez sélectionner une police personnalisée, sinon NINTENDOSWITCHUI.TTF sera utilisée
+font_path_tooltip: Vous pouvez sélectionner une police personnalisée, sinon AvenirLTStd-Black.otf sera utilisée
 select_font: Sélectionner Police
 spine_created: ✓ Spine créé avec succès
 spine_error: ✗ Erreur

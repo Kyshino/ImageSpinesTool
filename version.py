@@ -1,4 +1,4 @@
-VERSION = "2.0.1"
+VERSION = "2.0.2"
 VERSION_DATE = "2024-11-21"
 APP_NAME = "Images Spines Tool"
 FULL_APP_NAME = f"{APP_NAME} v{VERSION}" 
