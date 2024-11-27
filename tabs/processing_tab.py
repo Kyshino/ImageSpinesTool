@@ -92,7 +92,7 @@ class ProcessingTab(Frame):
             textvariable=self.selected_size,
             values=list(sizes.keys()),
             state='readonly',
-            width=20
+            width=25
         )
         self.size_combobox.grid(row=3, column=1, padx=(0,10), pady=5, sticky='w')
         
@@ -104,7 +104,7 @@ class ProcessingTab(Frame):
             textvariable=self.selected_paper_type,
             values=list(paper_horizontal_sizes.keys()),
             state='readonly',
-            width=20
+            width=25
         )
         self.paper_combobox.grid(row=4, column=1, padx=(0,10), pady=5, sticky='w')
 

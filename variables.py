@@ -14,16 +14,15 @@ language_map = {
 
 sizes = {
     "Switch PET": (131, 2000),  # 17cm x 1.1cm
-    "Switch without PET": (112, 1890)  # 16cm x 0.95cm
+    "Switch without PET": (112, 1890),  # 16cm x 0.95cm
 }
 
 paper_horizontal_sizes = {
-    "A4": (3508, 2480),  # 210 mm x 297 mm (horizontal)
-    "A3": (4961, 3508),  # 297 mm x 420 mm (horizontal)
-    # "A5": (2480, 1748),  # 148 mm x 210 mm (horizontal)
-    "Carta": (3508, 2551),  # 216 mm x 279 mm (horizontal)
-    "Legal": (4211, 2551),  # 216 mm x 356 mm (horizontal)
-    "B5": (2953, 2079)   # 176 mm x 250 mm (horizontal)
+    "A4 (210mm x 297mm)": (3508, 2480),  # Horizontal: 297mm x Vertical: 210mm
+    "A3 (297mm x 420mm)": (4961, 3508),  # Horizontal: 420mm x Vertical: 297mm
+    "B4 (364mm x 257mm)": (5144, 3035),  # Horizontal: 364mm x Vertical: 257mm
+    "Letter (216mm x 279mm)": (3508, 2551),  # Horizontal: 279mm x Vertical: 216mm
+    "Legal (355.6mm x 215.9mm)": (4200, 2550),  # Horizontal: 355.6mm x Vertical: 215.9mm
 }
 
 side_margin = 60
@@ -45,5 +44,10 @@ colors = {
 switch_color_enabled = False
 
 TEMPLATES = {
-    "switch": os.path.join(os.path.dirname(__file__), "templates", "switch_spine_template.png")
+    "switch": os.path.join(os.path.dirname(__file__), "templates", "switch_spine_template.png"),
+    "wii": os.path.join(os.path.dirname(__file__), "templates", "wii_spine_template.png")
 }
+
+switch_spines_url = "https://drive.google.com/drive/folders/1km18qrL_ARYE-3qKUIT81FoMEyvI-8vf"
+
+project_url = "https://api.github.com/repos/Kyshino/ImageSpinesTool/releases/latest"

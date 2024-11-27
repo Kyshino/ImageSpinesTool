@@ -107,3 +107,6 @@ pdf_files: PDF файлы
 all_files: Все файлы
 select_language: Выбрать язык
 logo_type: "Тип Логотипа (ниже)"
+
+switch_spines_label: Спины Switch
+download_link: Скачать здесь

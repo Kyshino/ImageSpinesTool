@@ -107,3 +107,6 @@ pdf_files: PDF-Dateien
 all_files: Alle Dateien
 select_language: Sprache auswählen
 logo_type: "Logo-Typ (unten)"
+
+switch_spines_label: Switch-Rücken
+download_link: Hier herunterladen

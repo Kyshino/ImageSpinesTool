@@ -108,3 +108,6 @@ all_files: すべてのファイル
 select_language: 言語を選択
 logo_type: "ロゴタイプ (下)"
   
+
+switch_spines_label: スイッチスパイン
+download_link: ここからダウンロード

@@ -4,6 +4,7 @@ import packaging.version as version
 from tkinter import messagebox
 from translations import get_text
 from version import VERSION
+from variables import project_url
 
 def open_support_link():
     webbrowser.open("https://www.paypal.com/donate/?hosted_button_id=RANLKSWR8UZC2")
@@ -13,7 +14,7 @@ def open_kofi_link():
 
 def check_for_updates(current_language):
     try:
-        response = requests.get('https://api.github.com/repos/Kyshino/ImageSpinesTool/releases/latest')
+        response = requests.get(project_url)
         if response.status_code == 200:
             data = response.json()
             latest_version = data['tag_name'].replace('v', '')
@@ -32,3 +33,17 @@ def check_for_updates(current_language):
                         webbrowser.open(download_url)
     except Exception as e:
         print(f"Error al verificar actualizaciones: {e}")
+
+def download_count():
+    download_count = 0
+    try:
+        response = requests.get(project_url)
+        
+        if response.status_code == 200:
+            latest_release = response.json()
+            download_count = latest_release['assets'][0]['download_count']
+
+        return download_count  
+           
+    except Exception as e:
+        return download_count

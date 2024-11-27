@@ -107,3 +107,5 @@ pdf_files: File PDF
 all_files: Tutti i file
 select_language: Seleziona lingua
 logo_type: "Tipo di Logo (sotto)"
+switch_spines_label: Spine di Switch
+download_link: Scarica qui

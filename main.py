@@ -4,10 +4,11 @@ from PIL import Image, ImageTk
 from tabs.processing_tab import ProcessingTab
 from tabs.settings_tab import SettingsTab
 from tabs.spine_creator_tab import SpineCreatorTab
+from tabs.downloads_tab import DownloadsTab
 from translations import translations, get_text
 from variables import language_map
 from version import VERSION, FULL_APP_NAME
-from utils.utils import (open_support_link, open_kofi_link, check_for_updates)
+from utils.utils import (open_support_link, open_kofi_link, check_for_updates,)
 
 class MainApplication:
     def __init__(self):
@@ -79,6 +80,7 @@ class MainApplication:
         self.processing_tab = ProcessingTab(self.notebook, self.current_language)
         self.settings_tab = SettingsTab(self.notebook, self.current_language)
         self.spine_creator_tab = SpineCreatorTab(self.notebook, self.current_language)
+        self.downloads_tab = DownloadsTab(self.notebook, self.current_language)
         
         # Conectar las pestañas (añadir el processing_tab como observador del settings_tab)
         self.settings_tab.add_observer(self.processing_tab)
@@ -87,6 +89,7 @@ class MainApplication:
         self.notebook.add(self.processing_tab, text=get_text(self.current_language, 'image_processing_tab', 'Image Processing'))
         self.notebook.add(self.settings_tab, text=get_text(self.current_language, 'settings_tab', 'Settings'))
         self.notebook.add(self.spine_creator_tab, text=get_text(self.current_language, 'spine_creator_tab', 'Spine Creator'))
+        self.notebook.add(self.downloads_tab, text=get_text(self.current_language, 'downloads_tab', 'Downloads'))
 
     def on_language_change(self, event):
         selected_lang = self.language_selected.get()
@@ -97,11 +100,13 @@ class MainApplication:
         self.processing_tab.update_language(lang_code)
         self.settings_tab.update_language(lang_code)
         self.spine_creator_tab.update_language(lang_code)
+        self.downloads_tab.update_language(lang_code)
         
         # Actualizar los títulos de las pestañas
         self.notebook.tab(self.processing_tab, text=get_text(lang_code, 'image_processing_tab', 'Image Processing'))
         self.notebook.tab(self.settings_tab, text=get_text(lang_code, 'settings_tab', 'Settings'))
         self.notebook.tab(self.spine_creator_tab, text=get_text(lang_code, 'spine_creator_tab', 'Spine Creator'))
+        self.notebook.tab(self.downloads_tab, text=get_text(lang_code, 'downloads_tab', 'Downloads'))
         
         # Actualizar el enlace de soporte
         if self.support_link:
@@ -114,7 +119,7 @@ class MainApplication:
         signature_frame = Frame(self.root, bg=self.root.cget("bg"))
         signature_frame.place(relx=0.98, rely=0.99, anchor='se')
 
-        signature = Label(signature_frame, text="By Kyshino |", font=('Arial', 8), fg='gray', bg=self.root.cget("bg"))
+        signature = Label(signature_frame, text=f"By Kyshino | ", font=('Arial', 8), fg='gray', bg=self.root.cget("bg"))
         signature.pack(side='left')
 
         self.support_link = Label(

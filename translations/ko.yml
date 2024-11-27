@@ -108,3 +108,6 @@ all_files: 모든 파일
 select_language: 언어 선택
 logo_type: "로고 유형 (아래)"
   
+
+switch_spines_label: 스위치 스파인
+download_link: 여기에서 다운로드

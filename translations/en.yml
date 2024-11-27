@@ -106,3 +106,6 @@ select_output_pdf: Select output PDF file
 pdf_files: PDF files
 all_files: All files
 logo_type: "Logo Type (below)"
+
+switch_spines_label: Switch Spines
+download_link: Download Here

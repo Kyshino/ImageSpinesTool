@@ -1,8 +1,8 @@
 {
     "side_margin": 60,
     "spacing": 1,
-    "image_folder": "C:\\Users\\KyshinoDesktop\\Desktop\\Nueva carpeta",
-    "output_folder": "C:\\Users\\KyshinoDesktop\\Desktop\\Nueva carpeta\\Output",
+    "image_folder": "C:\\Users\\userTest\\Desktop\\New Folder",
+    "output_folder": "C:\\Users\\userTest\\Desktop\\New Folder\\Output",
     "reddit_client_id": "",
     "reddit_client_secret": "",
     "switch_color_enabled": false

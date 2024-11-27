@@ -107,3 +107,6 @@ pdf_files: PDF文件
 all_files: 所有文件
 select_language: 选择语言 
 logo_type: "标志类型 (下方)"
+
+switch_spines_label: Switch 脊柱
+download_link: 在这里下载
