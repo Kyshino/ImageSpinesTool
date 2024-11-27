@@ -1,7 +1,6 @@
-import sys
 import os
+import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 import praw
 import requests
 from urllib.parse import urlparse
@@ -9,9 +8,7 @@ from pathlib import Path
 import re
 from PIL import Image
 from io import BytesIO
-from utils.config_manager import (get_image_folder, 
-                                get_reddit_client_id,
-                                get_reddit_client_secret)
+from utils.config_manager import (get_reddit_client_id, get_reddit_client_secret)
 
 class SwitchSpinesDownloader:
     def __init__(self):
@@ -21,180 +18,106 @@ class SwitchSpinesDownloader:
             user_agent="SwitchSpineScraper/1.0"
         )
         
-        config_folder = get_image_folder()
-        self.output_dir = config_folder if os.path.exists(config_folder) else "downloaded_spines"
-        Path(self.output_dir).mkdir(exist_ok=True)
-        
-        self.progress_callback = None
-        
-    def set_progress_callback(self, callback):
-        self.progress_callback = callback
-
-    def get_all_posts(self):
-        all_posts = []
-        processed_urls = set()
-        
-        for listing in ['hot', 'new', 'top']:
-            if listing == 'top':
-                posts = self.reddit.subreddit('SwitchSpines').top(limit=None, time_filter='all')
-            elif listing == 'new':
-                posts = self.reddit.subreddit('SwitchSpines').new(limit=None)
-            else:
-                posts = self.reddit.subreddit('SwitchSpines').hot(limit=None)
-                
-            for post in posts:
-                if post.url in processed_urls:
-                    continue
-                if hasattr(post, 'url') and any(post.url.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png']):
-                    all_posts.append(post)
-                    processed_urls.add(post.url)
-        
-        return all_posts
-
-    def is_switch_spine(self, image_data):
-        try:
-            img = Image.open(BytesIO(image_data))
-            width, height = img.size
-            
-            expected_width = 122
-            expected_height = 1906
-            width_margin = expected_width * 0.2
-            height_margin = expected_height * 0.2
-            
-            is_spine_dimension = (
-                abs(width - expected_width) <= width_margin and
-                abs(height - expected_height) <= height_margin
-            )
-            
-            if not is_spine_dimension:
-                print(f"  📏 Incorrect dimensions: {width}x{height}")
-                return False
-                
-            print(f"  📊 Image analysis:")
-            print(f"    - Dimensions: {width}x{height} ✅")
-            return True
-            
-        except Exception as e:
-            print(f"Error analyzing image: {str(e)}")
-            return False
+        while True:
+            self.output_dir = input("Enter the output directory for downloaded spines: ").strip()
+            if os.path.exists(self.output_dir):
+                break
+            create = input(f"Directory '{self.output_dir}' does not exist. Create it? (y/n): ").lower()
+            if create == 'y':
+                Path(self.output_dir).mkdir(parents=True, exist_ok=True)
+                break
+            print("Please enter a valid directory path.")
 
     def clean_filename(self, filename):
         cleaned = re.sub(r'[<>:"/\\|?*]', '', filename)
         return cleaned[:200]
 
+    def generate_unique_filename(self, base_filename):
+        version = 1
+        filename = f"{base_filename}.jpg"
+        filepath = os.path.join(self.output_dir, filename)
+        
+        while os.path.exists(filepath):
+            filename = f"{base_filename}_v{version}.jpg"
+            filepath = os.path.join(self.output_dir, filename)
+            version += 1
+        
+        return filepath, filename
+
     def download_image(self, url, title):
         try:
-            # Limpiar el título para usarlo como nombre de archivo
-            filename = re.sub(r'[<>:"/\\|?*]', '', title)
-            filename = f"{filename}.jpg"
-            filepath = os.path.join(self.output_dir, filename)
+            base_filename = self.clean_filename(title)
+            filepath, filename = self.generate_unique_filename(base_filename)
             
-            # Si el archivo ya existe, omitirlo
-            if os.path.exists(filepath):
-                print(f"Skipping {filename} (already exists)")
-                return False
-            
-            # Descargar la imagen
             response = requests.get(url)
             response.raise_for_status()
             
-            # Guardar la imagen
-            with open(filepath, 'wb') as f:
-                f.write(response.content)
+            img = Image.open(BytesIO(response.content))
+            required_width = 122
+            required_height = 1906
+            margin_width = int(required_width * 0.1)
+            margin_height = int(required_height * 0.1)
             
-            print(f"Downloaded {filename}")
-            return True
+            if (img.width >= (required_width - margin_width) and
+                img.width <= (required_width + margin_width) and
+                img.height >= (required_height - margin_height) and
+                img.height <= (required_height + margin_height)):
+                with open(filepath, 'wb') as f:
+                    f.write(response.content)
+                print(f"✅ Image downloaded: {filename}")
+                return True
+            else:
+                print(f"❌ Image {filename} does not meet size requirements.")
+                return False
             
         except Exception as e:
-            print(f"Error downloading {url}: {str(e)}")
+            print(f"❌ Error downloading {url}: {str(e)}")
             return False
 
     def download_all(self):
-        print("🔍 Starting spine download...")
+        print(" Starting spine images download...")
         downloaded = 0
         skipped = 0
-        processed = 0
         
-        try:
-            # Obtener y contar todos los posts primero
-            all_posts = []
-            processed_urls = set()
-            
+        try:            
             for listing in ['hot', 'new', 'top']:
-                if listing == 'top':
-                    posts = self.reddit.subreddit('SwitchSpines').top(limit=None, time_filter='all')
-                elif listing == 'new':
-                    posts = self.reddit.subreddit('SwitchSpines').new(limit=None)
-                else:
-                    posts = self.reddit.subreddit('SwitchSpines').hot(limit=None)
-                    
-                for post in posts:
-                    if post.url in processed_urls:
-                        continue
-                    if hasattr(post, 'url') and any(post.url.lower().endswith(ext) for ext in ['.jpg', '.jpeg', '.png']):
-                        all_posts.append(post)
-                        processed_urls.add(post.url)
-            
-            total_posts = len(all_posts)
-            print(f"Found {total_posts} unique spine images")
-            
-            # Procesar los posts
-            for index, post in enumerate(all_posts):
-                if self.progress_callback:
-                    progress = min(((index + 1) / total_posts) * 100, 100)
-                    try:
-                        self.progress_callback(progress, downloaded, skipped, total_posts)
-                    except Exception as e:
-                        if str(e) == "Download cancelled by user":
-                            print("\n⚠️ Cancellation detected during download")
-                            print(f"📊 Progress before cancellation:")
-                            print(f"  - Downloaded: {downloaded}")
-                            print(f"  - Skipped: {skipped}")
-                            print(f"  - Progress: {progress:.1f}%")
-                            return False
-                        raise
-                
-                if self.download_image(post.url, post.title):
-                    downloaded += 1
-                else:
-                    skipped += 1
-                processed += 1
+                print(f"\n🔄 Getting posts from section: {listing.capitalize()}")
+                posts = self.get_posts(listing)
 
-            print(f"\n📊 Final Summary:")
-            print(f"✅ Downloaded: {downloaded}")
-            print(f"❌ Skipped: {skipped}")
-            print(f"📁 Location: {os.path.abspath(self.output_dir)}")
-            
+                for post in posts:                        
+                    if hasattr(post, 'media_metadata'):
+                        for media_id, media_info in post.media_metadata.items():
+                            if media_info['status'] == 'valid' and media_info['e'] == 'Image':
+                                image_url = media_info['s']['u']
+                                if self.download_image(image_url, post.title):
+                                    downloaded += 1
+                                else:
+                                    skipped += 1
+
+            self.print_summary(downloaded, skipped)
             return True
             
         except Exception as e:
             print(f"❌ Error during download: {str(e)}")
             raise
 
-    def verify_credentials(self, client_id, client_secret):
-        try:
-            import praw
-            reddit = praw.Reddit(
-                client_id=client_id,
-                client_secret=client_secret,
-                user_agent="SwitchSpinesTool/0.5"
-            )
-            # Intentar hacer una llamada simple para verificar las credenciales
-            subreddit = reddit.subreddit('NintendoSwitchBoxArt')
-            next(subreddit.hot(limit=1))  # Intentar obtener el primer post
-            return True
-        except Exception as e:
-            if '401' in str(e) or 'unauthorized' in str(e).lower():
-                return False
-            if '403' in str(e) or 'forbidden' in str(e).lower():
-                return False
-            # Si es otro tipo de error, lo propagamos
-            raise e
+    def get_posts(self, listing):
+        if listing == 'top':
+            return self.reddit.subreddit('SwitchSpines').top(limit=None, time_filter='all')
+        elif listing == 'new':
+            return self.reddit.subreddit('SwitchSpines').new(limit=None)
+        else:
+            return self.reddit.subreddit('SwitchSpines').hot(limit=None)
 
+    def print_summary(self, downloaded, skipped):
+        print(f"\n📊 Final Summary:")
+        print(f"✅ Images downloaded: {downloaded}")
+        print(f"❌ Images skipped: {skipped}")
+        print(f"📁 Download location: {os.path.abspath(self.output_dir)}")
 
 def main():
     downloader = SwitchSpinesDownloader()
     downloader.download_all()
 
 if __name__ == "__main__":
-    main() 
+    main()

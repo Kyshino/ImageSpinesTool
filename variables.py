@@ -48,6 +48,6 @@ TEMPLATES = {
     "wii": os.path.join(os.path.dirname(__file__), "templates", "wii_spine_template.png")
 }
 
-switch_spines_url = "https://drive.google.com/drive/folders/1km18qrL_ARYE-3qKUIT81FoMEyvI-8vf"
+switch_spines_url = "https://mega.nz/folder/PYskFBAa#oiv6fG9BFveoTIDqnqZ13g"
 
 project_url = "https://api.github.com/repos/Kyshino/ImageSpinesTool/releases/latest"

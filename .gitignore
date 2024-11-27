@@ -3,4 +3,5 @@ __pycache__/
 Thumbs.db
 settings.json
 downloaded_spines/*
-settings.json
+Switch Spines Database/*
+*settings.json*
